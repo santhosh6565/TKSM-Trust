@@ -20,6 +20,7 @@ use App\Http\Controllers\AnnouncementController;
 
 Route::get('/', [PageController::class, 'index'])->name('landing');
 
+
 // Other landing pages
 Route::get('/donations', [PageController::class, 'donations'])->name('donations');
 Route::get('/Event', [PageController::class, 'event'])->name('Event');

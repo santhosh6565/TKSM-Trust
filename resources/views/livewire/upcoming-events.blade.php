@@ -1,3 +1,4 @@
+
 <div class="container mx-auto">
     <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md mb-6">
         <h2 class="text-xl font-semibold mb-4 text-gray-800 dark:text-gray-200">Upcoming Events</h2>

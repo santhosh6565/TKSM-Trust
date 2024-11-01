@@ -6,6 +6,9 @@
         <title>Trust</title>
         <!-- Google Fonts: Poppins -->
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
         {{-- <link rel="stylesheet" href="style.css"> --}}
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMZozbQKozK4LFFd08ioytXt6K3fPGAZ+P7F4" crossorigin="anonymous">
         <!-- Tailwind CDN -->
@@ -13,7 +16,7 @@
         <style>
             /* Apply Poppins font globally */
             body {
-                font-family: 'Poppins', sans-serif;
+                font-family: 'Roboto Slab', sans-serif;
             }
 
             /* Styling for active link */
@@ -30,10 +33,10 @@
     <body class="">
         <!-- Navbar -->
         <div class="navbar ">
-            <nav class="bg-white fixed w-full top-0 shadow-md z-50 p-3 lg:px-[120px]">
+            <nav class="bg-white fixed w-full top-0 shadow-md z-50 p-3 lg:p-2 lg:px-[120px]">
                 <div class="container mx-auto px-4  flex justify-between items-center">
-                    <a href="#" class="text-xl  font-semibold">
-                        <img src="https://raw.githubusercontent.com/santhosh6565/catering-service/main/uploads/logo.webp" class="w-[120px] lg:w-[160px]" alt="">
+                    <a href="/" class="text-xl  font-semibold">
+                        <img src="https://raw.githubusercontent.com/santhosh6565/catering-service/main/uploads/logo.webp" class="w-[120px] lg:w-[185px]" alt="">
                     </a>
                     <button class="block lg:hidden text-gray-700 focus:outline-none" id="menu-btn">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -63,15 +66,15 @@
             </div>
         </div>
         </nav>
-        </div>
+    </div>
         <!-- Sections for navigation -->
-        <div class="z-10 bottom-[40px] left-[30px] fixed flex">
+        <div class="z-10 bottom-[40px] xl:bottom-[20px] left-[30px] fixed flex">
             <a href="https://wa.me/919940700250" target="_blank">
                 <img src="https://raw.githubusercontent.com/santhosh6565/catering-service/main/uploads/wapp.png" class="w-[60px] lg:w-[80px] " alt="">
             </a>
             <h1 class="mt-2 bg-gray-100 h-fit px-4 py-2 rounded-full text-[9px] lg:text-[15px] shadow-lg">Chat with us on WhatsApp !</h1>
         </div>
-        <section id="home" class="bg-white text-white">
+        <section id="home" class="bg-white px-10 lg:px-2 text-white">
             <!-- <h1 class="text-4xl mt-10">Home Section</h1> -->
             <div>
                 <div class="container mt-20 mx-auto flex flex-col lg:flex-row items-center lg:items-start justify-between h-fit lg:p-8 rounded-lg">
@@ -79,7 +82,7 @@
                     <div class="text-left  w-full lg:w-3/5 mb-8 lg:mb-0 ">
                         <div class="" data-aos="fade-up" data-aos-duration="2000">
                             <div>
-                                <h2 class="text-center lg:text-start text-4xl  lg:text-[70px] lg:w-[630px] font-semibold text-black  leading-tight"> Lets Ensure A Better Future For The Ones In Need </h2>
+                                <h2 class="text-center lg:text-start text-4xl  xl:text-[65px] lg:w-[630px] font-semibold text-black  leading-tight"> Lets Ensure A Better Future For The Ones In Need </h2>
                                 <p class=" text-center text-[15px] lg:text-lg pt-7 lg:text-start lg:pt-[40px] lg:pr-[100px] text-gray-600"> Your Support Today Can Bring Lasting Change and Hope to Those in Need Tomorrow. </p>
                                 <div class="lg:pt-[50px] flex justify-center items-center lg:justify-start">
                                     <div class="px-2 py-6 rounded-full hover:bg-orange-200">
@@ -91,8 +94,8 @@
                     </div>
                     <!-- Image Div -->
                     <div class="w-full lg:w-2/5" data-aos="fade-up" data-aos-duration="2000">
-                        <div class="">
-                            <img src="https://raw.githubusercontent.com/santhosh6565/catering-service/main/uploads/hero.webp" alt="Sample Image" class="w-full shadow-lg h-auto rounded-lg ">
+                        <div class="flex items-center justify-center">
+                            <img src="https://raw.githubusercontent.com/santhosh6565/catering-service/main/uploads/hero.webp" alt="Sample Image" class="lg:w-full w-4/5 m-4 shadow-lg h-auto rounded-lg ">
                         </div>
                     </div>
                 </div>
@@ -120,7 +123,7 @@
                 </div>
             </div>
         </section>
-        <section class="px-4">
+        <!-- <section class="px-4">
             <a href="{{ route('Event') }}">
                 <div class="flex items-center justify-between p-4 bg-orange-400 rounded-lg shadow-md shadow-orange-500">
                     <h2 class="text-2xl font-semibold text-orange-700">Upcoming Events:</h2>
@@ -134,30 +137,64 @@
                     </div>
                 </div>
             </a>
-        </section>
-        <section id="about" class="bg-white mb-10">
-            <div class="lg:mx-10 lg:mt-20 lg:flex " data-aos="fade-up" data-aos-duration="2000">
+        </section> -->
+        <section id="about" class="bg-white px-10 lg:px-2 lg:mt-0 mt-10 mb-10">
+        <div class="lg:mx-10 lg:mt-28 lg:flex "  data-aos="fade-up" data-aos-duration="2000">
                 <div class="lg:w-1/2 flex justify-center items-center">
-                    <div class="w-[400px] h-[270px] lg:w-[600px] lg:h-[500px] bg-gray-100 rounded-xl flex justify-center items-center relative">
-                        <!-- <a href="https://player.vimeo.com/external/488076225.hd.mp4?s=9cf4808c4e76c0a9267abb75dbec48bc451a138f&amp;profile_id=175"
-                            class="glightbox_video"><svg width="131" height="131" viewBox="0 0 131 131" fill="none"
-												xmlns="http://www.w3.org/2000/svg"><path class="inner-circle"
+                    <!-- <div
+                        class="w-[400px] h-[270px] lg:w-[600px] lg:h-[500px] bg-gray-100 rounded-xl flex justify-center items-center relative">
+
+
+                        <a href="https://player.vimeo.com/external/488076225.hd.mp4?s=9cf4808c4e76c0a9267abb75dbec48bc451a138f&amp;profile_id=175"
+                            class="glightbox_video">
+                            <svg width="131" height="131" viewBox="0 0 131 131" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path class="inner-circle"
                                     d="M65 21C40.1488 21 20 41.1488 20 66C20 90.8512 40.1488 111 65 111C89.8512 111 110 90.8512 110 66C110 41.1488 89.8512 21 65 21Z"
-                                    fill="white"></path><circle class="outer_circle" cx="65.5" cy="65.5" r="64" stroke="white"></circle><path class="play" fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M60 76V57L77 66.7774L60 76Z" fill="#BF2428"></path></svg></a> -->
-                        <img src="https://raw.githubusercontent.com/santhosh6565/catering-service/main/uploads/about-1.webp" alt="">
+                                    fill="white"></path>
+                                <circle class="outer_circle" cx="65.5" cy="65.5" r="64" stroke="white"></circle>
+                                <path class="play" fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M60 76V57L77 66.7774L60 76Z" fill="#BF2428"></path>
+                            </svg>
+                        </a>
+                        <img src="./images/contact-bg.webp" alt="">
+                    </div> -->
+                    <div class="flex">
+                        <div class="w-1/3 h-full mx-1  shadow-md">
+                            <img src="https://raw.githubusercontent.com/santhosh6565/catering-service/main/uploads/hero.webp" class="h-[270px] lg:h-[500px] w-full center object-cover" alt="">
+                        </div>
+                        <div class="w-1/3 h-full mx-1 mt-10 lg:mt-20 shadow-md">
+                            <img src="https://raw.githubusercontent.com/santhosh6565/catering-service/main/uploads/s1.webp" class="h-[270px] lg:h-[500px] w-full object-cover" alt="">
+                        </div>
+                        <div class="w-1/3 h-full mx-1 shadow-md">
+                            <img src="https://raw.githubusercontent.com/santhosh6565/catering-service/main/uploads/about-2.webp" class="h-[270px] lg:h-[500px] w-full object-cover" alt="">
+                        </div>
+                        
                     </div>
+
                 </div>
+
                 <div class="lg:w-1/2 lg:px-10">
-                    <h1 class="font-semibold  md:mx-[10px] border-b-[5px] border-orange-400  text-3xl w-fit mt-7 lg:mt-0 md:text-[50px]"> About Us</h1>
-                    <p class="text-justify lg:text-start py-6 lg:py-10 text-lg"> Thirukulandhai Sri Mayan Charitable Trust is a non-profit organization dedicated to uplifting and supporting underprivileged communities. Our mission is to provide essential services such as healthcare, education, and disaster relief to those in need, empowering individuals and families to build a brighter and more secure future. We believe in creating sustainable change by addressing both immediate needs and long-term development. Through various initiatives, we strive to offer hope, care, and opportunities to those who are often left behind. By working together with generous donors and compassionate volunteers, we can make a meaningful difference in the lives of many. <br />
-                        <br /> Join us in our journey of making the world a better place, one step at a time. Together, we can transform lives and communities for the better.
-                    </p>
+                    <h1
+                        class="font-semibold  md:mx-[10px] border-b-[5px] border-orange-400  text-3xl w-fit mt-7 lg:mt-0 md:text-[50px]">
+                        About Us</h1>
+                        <p class="text-justify lg:text-start py-6 lg:py-10 text-lg">
+                            Thirukulandhai Sri Mayan Charitable Trust is a non-profit organization dedicated to uplifting and supporting underprivileged communities. Our mission is to provide essential services such as healthcare, education, and disaster relief to those in need, empowering individuals and families to build a brighter and more secure future.
+                           
+                            We believe in creating sustainable change by addressing both immediate needs and long-term development. Through various initiatives, we strive to offer hope, care, and opportunities to those who are often left behind. By working together with generous donors and compassionate volunteers, we can make a meaningful difference in the lives of many.
+                            <br/><br/>
+                            Join us in our journey of making the world a better place, one step at a time. Together, we can transform lives and communities for the better.
+                        </p>
+                        
                     <div class="lg:mt-4">
-                        <a href="./Trust-book.pdf" class="bg-orange-400 px-5 lg:text-xl py-3 text-white" download="Thirukulandhai_Charitable_Trust_About.pdf">Know More</a>
+
+                        <a href="/public/Trust-book.pdf" class="bg-orange-400 px-5 lg:text-xl py-3 text-white">Know More</a>
                     </div>
                 </div>
+
             </div>
+
+
         </section>
         <section id="contributions" class="bg-white mb-10 p-4">
             <!-- <h2 class="text-3xl text-center font-semibold mb-8">Our Contributions</h2> -->
@@ -185,43 +222,44 @@
                 </div>
             </div>
         </section>
-        <section class="carousel mt-20 bg-[#272c49]">
-            <div class="flex justify-center items-center mb-10" data-aos="fade-up" data-aos-duration="2000">
-                <h1 class="font-semibold border-b-[5px] border-orange-400 text-3xl w-fit mt-7 text-white lg:mt-0 md:text-[50px]"> Our Works </h1>
-            </div>
-            <div class="relative overflow-hidden w-full">
-                <div class="flex transition-transform duration-500 ease-in-out" id="carouselSlides">
-                    @foreach($events as $event)
-                        <div class="w-full flex-shrink-0 lg:flex items-center justify-center">
-                            <img src="{{ asset('storage/' . $event->image_path) }}" alt="{{ $event->title }}" alt="{{ $event->title }}" class="w-full lg:w-[1000px] rounded-lg h-80 lg:h-[500px] object-cover">
-                        </div>
-                    @endforeach
+        <section class="carousel mt-20 py-10 px-5 lg:px-2  bg-[#272c49]">
+    <div class="flex justify-center items-center mb-10" data-aos="fade-up" data-aos-duration="2000">
+        <h1 class="font-semibold border-b-[5px] border-orange-400 text-3xl w-fit mt-7 text-white lg:mt-0 md:text-[50px]"> Our Works </h1>
+    </div>
+    <div class="relative overflow-hidden w-full">
+        <div class="flex transition-transform duration-500 ease-in-out" id="carouselSlides">
+            @foreach($events as $event)
+                <div class="w-full flex-shrink-0 lg:flex items-center justify-center flex-col text-center">
+                    <img src="{{ asset('storage/' . $event->image_path) }}" alt="{{ $event->title }}" class="w-full lg:w-[1000px] rounded-lg h-80 lg:h-[500px] object-cover mx-auto">
+                    <p class="text-lg lg:text-xl lg:px-20 text-gray-700 text-white mt-4">
+                        {{ $event->description }} <!-- Replace with the appropriate field for the description -->
+                    </p>
                 </div>
-                <button class="absolute top-1/2 left-1 lg:left-[150px] transform -translate-y-1/2 lg:w-[50px] bg-white text-black p-2 rounded-full lg:text-2xl" id="prevButton"> &#10094; </button>
-                <button class="absolute top-1/2 right-1 lg:right-[150px] transform -translate-y-1/2 lg:w-[50px] bg-white text-black p-2 rounded-full lg:text-2xl" id="nextButton"> &#10095; </button>
-            </div>
-            <div class="flex justify-center mt-4 space-x-3">
-                @foreach($events as $index => $event)
-                    <span class="w-3 h-3 bg-gray-400 rounded-full cursor-pointer" data-slide="{{ $index + 1 }}"></span>
-                @endforeach
-            </div>
-            <p class="text-center text-lg lg:text-xl lg:px-20 text-gray-700 text-white mt-6">
-                Thirukulandhai Sri Mayan Charitable Trust is dedicated to helping those in need through various initiatives. Our mission is to provide essential services such as healthcare, education, and support to underprivileged communities. Together, we strive to make a positive impact and uplift those who need it the most.
-            </p>
-        </section>
-        <section class="events"><div class="flex justify-center items-center my-20" data-aos="fade-up" data-aos-duration="2000"><h1 class="font-semibold border-b-[5px] border-orange-400 text-3xl w-fit mt-7 lg:mt-0 md:text-[50px]">
+            @endforeach
+        </div>
+        <button class="absolute top-1/3 left-1 lg:left-[150px] transform -translate-y-1/2 lg:w-[50px] bg-white text-black p-2 rounded-full lg:text-2xl" id="prevButton"> &#10094; </button>
+        <button class="absolute top-1/3 right-1 lg:right-[150px] transform -translate-y-1/2 lg:w-[50px] bg-white text-black p-2 rounded-full lg:text-2xl" id="nextButton"> &#10095; </button>
+    </div>
+    <div class="flex justify-center mt-4 space-x-3">
+        @foreach($events as $index => $event)
+            <span class="w-3 h-3 bg-gray-400 rounded-full cursor-pointer" data-slide="{{ $index + 1 }}"></span>
+        @endforeach
+    </div>
+</section>
+
+        <section class="events px-10 lg:px-2 "><div class="flex  justify-center items-center  my-20" data-aos="fade-up" data-aos-duration="2000"><h1 class="font-semibold border-b-[5px] border-orange-400 text-3xl w-fit mt-7 lg:mt-0 md:text-[50px]">
                     Upcoming Events
-                </h1></div><div class="grid gap-8 md:px-4 md:grid-cols-2 lg:grid-cols-3"><div class="bg-white shadow-md rounded-lg overflow-hidden transition-transform transform hover:scale-105"><img src="./images/contact-bg.webp" alt="Event 1" class="w-full h-40 lg:h-[300px] object-cover"><div class="p-4"><h2 class="text-xl font-semibold mb-2">Event Title 1</h2><p class="text-gray-600">Short description of the event goes here. It could be an exciting overview of what the event is about.</p><div class="flex justify-between items-center py-5"><p class=" text-orange-400  font-semibold">Date: 15th October 2024</p><div class="px-2 py-4 rounded-full hover:bg-orange-200"><a href="donate.html" class="px-4 lg:px-8 text-sm lg:text-[17px] py-2 border-2 border-orange-400 text-medium rounded-full bg-orange-400 text-white">Donate</a></div></div></div></div><div class="bg-white shadow-md rounded-lg overflow-hidden transition-transform transform hover:scale-105"><img src="./images/contact-bg.webp" alt="Event 2" class="w-full h-40 lg:h-[300px] object-cover"><div class="p-4"><h2 class="text-xl font-semibold mb-2">Event Title 2</h2><p class="text-gray-600">A short description about the second event. Make it engaging and informative.</p><div class="flex justify-between items-center py-5"><p class=" text-orange-400  font-semibold">Date: 15th October 2024</p><div class="px-2 py-4 rounded-full hover:bg-orange-200"><a href="donate.html" class="px-4 lg:px-8 text-sm lg:text-[17px] py-2 border-2 border-orange-400 text-medium rounded-full bg-orange-400 text-white">Donate</a></div></div></div></div><div class="bg-white shadow-md rounded-lg overflow-hidden transition-transform transform hover:scale-105"><img src="./images/contact-bg.webp" alt="Event 3" class="w-full h-40 lg:h-[300px] object-cover"><div class="p-4"><h2 class="text-xl font-semibold mb-2">Event Title 3</h2><p class="text-gray-600">This event is going to be amazing! Include relevant details about it here.</p><div class="flex justify-between items-center py-5"><p class=" text-orange-400  font-semibold">Date: 15th October 2024</p><div class="px-2 py-4 rounded-full hover:bg-orange-200"><a href="donate.html" class="px-4 lg:px-8 text-sm lg:text-[17px] py-2 border-2 border-orange-400 text-medium rounded-full bg-orange-400 text-white">Donate</a></div></div></div></div></div></section>
-        <section class="founders my-10"><div class="flex justify-center items-center" data-aos="fade-up" data-aos-duration="2000"><h1 class="font-semibold border-b-[5px] border-orange-400 text-2xl w-fit mt-7 lg:mt-0 md:text-[50px]">
+                </h1></div><div class="grid gap-8 md:px-10 md:grid-cols-2 lg:grid-cols-3"><div class="bg-white shadow-md rounded-lg overflow-hidden transition-transform transform hover:scale-105"><img src="./images/contact-bg.webp" alt="Event 1" class="w-full h-40 lg:h-[300px] object-cover"><div class="p-4"><h2 class="text-xl font-semibold mb-2">Event Title 1</h2><p class="text-gray-600">Short description of the event goes here. It could be an exciting overview of what the event is about.</p><div class="flex justify-between items-center py-5"><p class=" text-orange-400  font-semibold">Date: 15th October 2024</p><div class="px-2 py-4 rounded-full hover:bg-orange-200"><a href="donate.html" class="px-4 lg:px-8 text-sm lg:text-[17px] py-2 border-2 border-orange-400 text-medium rounded-full bg-orange-400 text-white">Donate</a></div></div></div></div><div class="bg-white shadow-md rounded-lg overflow-hidden transition-transform transform hover:scale-105"><img src="./images/contact-bg.webp" alt="Event 2" class="w-full h-40 lg:h-[300px] object-cover"><div class="p-4"><h2 class="text-xl font-semibold mb-2">Event Title 2</h2><p class="text-gray-600">A short description about the second event. Make it engaging and informative.</p><div class="flex justify-between items-center py-5"><p class=" text-orange-400  font-semibold">Date: 15th October 2024</p><div class="px-2 py-4 rounded-full hover:bg-orange-200"><a href="donate.html" class="px-4 lg:px-8 text-sm lg:text-[17px] py-2 border-2 border-orange-400 text-medium rounded-full bg-orange-400 text-white">Donate</a></div></div></div></div><div class="bg-white shadow-md rounded-lg overflow-hidden transition-transform transform hover:scale-105"><img src="./images/contact-bg.webp" alt="Event 3" class="w-full h-40 lg:h-[300px] object-cover"><div class="p-4"><h2 class="text-xl font-semibold mb-2">Event Title 3</h2><p class="text-gray-600">This event is going to be amazing! Include relevant details about it here.</p><div class="flex justify-between items-center py-5"><p class=" text-orange-400  font-semibold">Date: 15th October 2024</p><div class="px-2 py-4 rounded-full hover:bg-orange-200"><a href="donate.html" class="px-4 lg:px-8 text-sm lg:text-[17px] py-2 border-2 border-orange-400 text-medium rounded-full bg-orange-400 text-white">Donate</a></div></div></div></div></div></section>
+        <section class="founders my-10"><div class="flex justify-center items-center" data-aos="fade-up" data-aos-duration="2000"><h1 class="font-semibold border-b-[5px] border-orange-400 text-2xl w-fit mt-7 lg:mt-20 md:text-[50px]">
                     Meet the Founders
-                </h1></div><div class="grid gap-8 px-4 mt-12 md:grid-cols-2 lg:grid-cols-3"><div class="text-center bg-white shadow-md rounded-lg overflow-hidden transition-transform transform hover:scale-105"><img src="./images/edu.webp" alt="Founder 1" class="w-full h-60 lg:h-[380px] object-cover"><div class="p-6"><h2 class="text-xl font-semibold mb-2">John Doe</h2><p class="text-gray-600">John is the visionary leader with over 15 years of experience in the tech industry.</p></div></div><div class="text-center bg-white shadow-md rounded-lg overflow-hidden transition-transform transform hover:scale-105"><img src="./images/edu.webp" alt="Founder 2" class="w-full h-60 lg:h-[380px]  object-cover"><div class="p-6"><h2 class="text-xl font-semibold mb-2">Jane Smith</h2><p class="text-gray-600">Jane is the creative force behind our design and product strategies, making innovation a priority.</p></div></div><div class="text-center bg-white shadow-md rounded-lg overflow-hidden transition-transform transform hover:scale-105"><img src="./images/edu.webp" alt="Founder 3" class="w-full h-60 lg:h-[380px]  object-cover"><div class="p-6"><h2 class="text-xl font-semibold mb-2">Mike Johnson</h2><p class="text-gray-600">Mike brings unparalleled expertise in software development and leads our engineering team.</p></div></div></div></section>
+                </h1></div><div class="grid gap-8 px-4 md:px-10 mt-12 md:grid-cols-2 lg:grid-cols-3"><div class="text-center bg-white shadow-md rounded-lg overflow-hidden transition-transform transform hover:scale-105"><img src="./images/edu.webp" alt="Founder 1" class="w-full h-60 lg:h-[380px] object-cover"><div class="p-6"><h2 class="text-xl font-semibold mb-2">John Doe</h2><p class="text-gray-600">John is the visionary leader with over 15 years of experience in the tech industry.</p></div></div><div class="text-center bg-white shadow-md rounded-lg overflow-hidden transition-transform transform hover:scale-105"><img src="./images/edu.webp" alt="Founder 2" class="w-full h-60 lg:h-[380px]  object-cover"><div class="p-6"><h2 class="text-xl font-semibold mb-2">Jane Smith</h2><p class="text-gray-600">Jane is the creative force behind our design and product strategies, making innovation a priority.</p></div></div><div class="text-center bg-white shadow-md rounded-lg overflow-hidden transition-transform transform hover:scale-105"><img src="./images/edu.webp" alt="Founder 3" class="w-full h-60 lg:h-[380px]  object-cover"><div class="p-6"><h2 class="text-xl font-semibold mb-2">Mike Johnson</h2><p class="text-gray-600">Mike brings unparalleled expertise in software development and leads our engineering team.</p></div></div></div></section>
         <section id="contact" class="p-0">
             <!-- <h1 class="text-4xl">Contact Section</h1> -->
             <!-- <div class="flex items-center justify-center "><h1 class="text-white border-b-2 border-blue-900  w-fit">Contact Us</h1></div> -->
             <div class="lg:flex">
                 <!-- Contact Form Div -->
                 <div class="w-full lg:w-3/5 h-auto bg-coverbg-center " style="background-image: url('https://raw.githubusercontent.com/santhosh6565/catering-service/main/uploads/contact-bg.webp');">
-                    <div class="bg-orange-400/80 flex justify-center items-center p-8 pt-[50px] div1">
+                    <div class="bg-orange-400/90 flex justify-center items-center p-8 pt-[50px] div1">
                         <form action="#" class="w-full lg:px-10" data-aos="fade-up" data-aos-duration="2000">
                             <h1 class="text-6xl text-white font-bold  pb-2   w-fit">Let's Get In Touch !</h1>
                             <p class="text-white mb-10">Fill in the form to connect with us.</p>
@@ -252,7 +290,7 @@
         <footer class="w-full h-auto bg-[#272c49]">
             <div class="lg:flex lg:justify-between lg:items-start p-4">
                 <div class="lg:w-1/4 h-full flex justify-center items-center">
-                    <img src="./images/logo-w.webp" class="h-full mt-14" alt="">
+                    <img src="https://raw.githubusercontent.com/santhosh6565/catering-service/main/uploads/logo.webp" class="h-full mt-14" alt="">
                 </div>
                 <div class="lg:w-1/4 pl-0 lg:pl-20">
                     <div class="flex justify-start items-start">
@@ -440,5 +478,4 @@ setInterval(() => {
                 observer.observe(counterSection); // Start observing the counter section
               });
         </script>
-    </body>
-</html>
+  
