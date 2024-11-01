@@ -7,16 +7,19 @@ use App\Models\Role;
 use Illuminate\Http\Request;
 use App\Constants\Permission;
 use App\Services\LogService;
+use App\Services\NotificationService;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
     protected $logService;
+    protected $notificationService;
 
-    public function __construct(LogService $logService)
+    public function __construct(LogService $logService, NotificationService $notificationService)
     {
         $this->logService = $logService;
+        $this->notificationService = $notificationService;
     }
     public function showUsers()
     {
@@ -61,7 +64,13 @@ class UserController extends Controller
             'role_id' => $role->id,
         ]);
 
+        // Log success
         $this->logService->logSuccess('User added successfully: ' . $user->name . ' - Role: ' . $request->role);
+
+        // Create a welcome notification
+        $welcomeMessage = "Welcome to Thirukulandhai Sri Mayan Charitable Trust, {$user->name}! We're glad to have you onboard. As a part of our team.";
+        $this->notificationService->createNotification($user->id, $welcomeMessage);
+
         return redirect()->route('admin.users')->with('success', 'User added successfully.');
     }
 
@@ -78,7 +87,7 @@ class UserController extends Controller
         return view('admin.users.edit', compact('user', 'roles'));
     }
 
-    public function updateuser(Request $request, User $user)
+    public function updateUser(Request $request, User $user)
     {
         // Validate the request
         $validator = Validator::make($request->all(), [
@@ -132,29 +141,72 @@ class UserController extends Controller
         // Save user data
         $user->save();
 
-        $this->logService->logSuccess('User updated successfully: ' . $user->name . ' - Role: ' . $request->role);
-        
+        // Log success
+        $this->logService->logSuccess('User updated successfully: ' . $user->name . ' - Role: ' . ($roleInput == '1' ? 'Admin' : 'User'));
+
+        // Send a notification to the user about the update
+        $notificationMessage = "Hello {$user->name}, your account details have been successfully updated. If you did not request this change, please contact support.";
+        $this->notificationService->createNotification($user->id, $notificationMessage);
+
         return redirect()->route('admin.users')->with('success', 'User updated successfully.');
     }
 
     public function restoreUser($id)
     {
-        $user = User::withTrashed()->find($id);
-        if ($user && $user->trashed()) {
-            $user->restore();
-            return redirect()->back()->with('success', 'User restored successfully.');
+        try {
+            // Attempt to find the user with the given ID, including soft-deleted users
+            $user = User::withTrashed()->find($id);
+
+            // Check if the user exists and is trashed
+            if ($user && $user->trashed()) {
+                // Restore the user
+                $user->restore();
+                
+                // Log the successful restoration
+                $this->logService->logSuccess("User restored successfully: ID - {$id}");
+
+                return redirect()->back()->with('success', 'User restored successfully.');
+            }
+
+            // Log the case where the user was not found or not deleted
+            $this->logService->logError("Failed to restore user: ID - {$id}. User not found or not deleted.");
+            
+            return redirect()->back()->with('error', 'User not found or not deleted.');
+        } catch (\Exception $e) {
+            // Log any exceptions that occur
+            $this->logService->logError("Error restoring user ID - {$id}: " . $e->getMessage());
+            
+            return back()->withErrors(['error' => 'Failed to restore user: ' . $e->getMessage()]);
         }
-        return redirect()->back()->with('error', 'User not found or not deleted.');
     }
 
     public function forceDeleteUser($id)
     {
-        $user = User::withTrashed()->find($id);
-        if ($user && $user->trashed()) {
-            $user->forceDelete();
-            return redirect()->back()->with('success', 'User deleted permanently.');
+        try {
+            // Attempt to find the user with the given ID, including soft-deleted users
+            $user = User::withTrashed()->find($id);
+            
+            // Check if the user exists and is trashed
+            if ($user && $user->trashed()) {
+                // Permanently delete the user
+                $user->forceDelete();
+                
+                // Log the successful permanent deletion
+                $this->logService->logSuccess("User deleted permanently: ID - {$id}");
+                
+                return redirect()->back()->with('success', 'User deleted permanently.');
+            }
+
+            // Log the case where the user was not found or not deleted
+            $this->logService->logError("Failed to permanently delete user: ID - {$id}. User not found or not deleted.");
+            
+            return redirect()->back()->with('error', 'User not found or not deleted.');
+        } catch (\Exception $e) {
+            // Log any exceptions that occur
+            $this->logService->logError("Error permanently deleting user ID - {$id}: " . $e->getMessage());
+            
+            return back()->withErrors(['error' => 'Failed to delete user permanently: ' . $e->getMessage()]);
         }
-        return redirect()->back()->with('error', 'User not found or not deleted.');
     }   
 
 }

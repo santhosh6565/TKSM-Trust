@@ -14,7 +14,7 @@
         <div class="relative flex items-center justify-center p-6 bg-purple-200 dark:bg-gray-800 rounded-lg shadow-md mb-4">
             <!-- "All Users" label in the top right corner -->
             @if ($announcement->is_all_users)
-                <span class="absolute top-2 right-2 px-2 py-1 bg-blue-500 dark:bg-blue-700 text-white text-xs rounded-lg">
+                <span class="absolute top-2 right-2 px-2 py-1 bg-purple-500 dark:bg-purple-700 text-white text-xs rounded-lg">
                     All Users
                 </span>
             @endif
@@ -25,7 +25,7 @@
                     <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-100">
                         {{ $announcement->title }}
                     </h3>
-                    <svg id="icon-{{ $announcement->id }}" class="w-5 h-5 text-gray-800 dark:text-gray-100 transform transition-transform" viewBox="0 0 20 20" fill="currentColor">
+                    <svg id="icon-{{ $announcement->id }}" class="w-5 h-5 text-purple-800 dark:text-purple-100 transform transition-transform" viewBox="0 0 20 20" fill="currentColor">
                         <path fill-rule="evenodd" d="M5 10a1 1 0 012 0h6a1 1 0 110 2H7a1 1 0 01-2 0v-2z" clip-rule="evenodd"/>
                     </svg>
                 </div>

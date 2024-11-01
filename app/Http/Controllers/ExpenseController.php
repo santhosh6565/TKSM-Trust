@@ -6,9 +6,16 @@ use App\Models\Expense;
 use App\Models\ExpenseCategory;
 use App\Constants\PaymentConstants;
 use Illuminate\Http\Request;
+use App\Services\LogService;
 
 class ExpenseController extends Controller
 {
+    protected $logService;
+
+    public function __construct(LogService $logService)
+    {
+        $this->logService = $logService;
+    }
     public function index()
     {
         $expenses = Expense::with('expenseCategory')->get();
@@ -39,7 +46,7 @@ class ExpenseController extends Controller
 
         try {
             // Creating the expense record
-            Expense::create([
+            $expense = Expense::create([
                 'name' => $validated['name'],
                 'payment_method' => $validated['payment_method'],
                 'entry_date' => $validated['entry_date'],
@@ -52,16 +59,22 @@ class ExpenseController extends Controller
                 'created_by_id' => auth()->id(),
             ]);
 
+            // Log success
+            $this->logService->logSuccess('Expense added successfully: ' . $expense->name . ' - Amount: ' . $expense->amount);
+
             return redirect()->route('admin.expense')->with('success', 'Expense added successfully.');
         } catch (\Exception $e) {
+            // Log error
+            $this->logService->logError('Failed to add expense: ' . $e->getMessage());
+
             // Error handling
             return back()->withErrors(['error' => 'Failed to add expense: ' . $e->getMessage()]);
         }
     }
 
-
     public function update(Request $request, $id)
     {
+        // Input validation
         $request->validate([
             'entry_date' => 'required|date',
             'name' => 'required|string|max:255',
@@ -76,6 +89,8 @@ class ExpenseController extends Controller
 
         try {
             $expense = Expense::findOrFail($id);
+
+            // Updating the expense record
             $expense->update([
                 'entry_date' => $request->entry_date,
                 'name' => $request->name,
@@ -88,8 +103,15 @@ class ExpenseController extends Controller
                 'area' => $request->area,
             ]);
 
+            // Log success
+            $this->logService->logSuccess('Expense updated successfully: ' . $expense->name . ' - Amount: ' . $expense->amount);
+
             return redirect()->route('admin.expense')->with('success', 'Expense updated successfully.');
         } catch (\Exception $e) {
+            // Log error
+            $this->logService->logError('Failed to update expense (ID: ' . $id . '): ' . $e->getMessage());
+
+            // Return with error message
             return back()->withErrors(['error' => 'Failed to update expense: ' . $e->getMessage()]);
         }
     }
@@ -106,10 +128,23 @@ class ExpenseController extends Controller
     {
         try {
             $expense = Expense::findOrFail($id);
+            
+            // Store expense details for logging before deletion
+            $expenseName = $expense->name;
+            $expenseAmount = $expense->amount;
+
+            // Delete the expense record
             $expense->delete();
+
+            // Log success
+            $this->logService->logSuccess("Expense deleted successfully: $expenseName - Amount: $expenseAmount");
 
             return redirect()->route('admin.expense')->with('success', 'Expense deleted successfully.');
         } catch (\Exception $e) {
+            // Log error
+            $this->logService->logError("Failed to delete expense (ID: $id): " . $e->getMessage());
+
+            // Return with error message
             return back()->withErrors(['error' => 'Failed to delete expense: ' . $e->getMessage()]);
         }
     }

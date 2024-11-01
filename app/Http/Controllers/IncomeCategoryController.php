@@ -5,9 +5,17 @@ namespace App\Http\Controllers;
 use App\Models\IncomeCategory;
 use Illuminate\Http\Request;
 use App\Models\Income;
+use App\Services\LogService;
 
 class IncomeCategoryController extends Controller
 {
+    protected $logService;
+
+    public function __construct(LogService $logService)
+    {
+        $this->logService = $logService;
+    }
+    
     public function index()
     {
         $categories = IncomeCategory::all();
@@ -16,16 +24,28 @@ class IncomeCategoryController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
+        // Validate the request input
+        $validated = $request->validate([
             'name' => 'required|string|max:255',
         ]);
 
-        IncomeCategory::create([
-            'name' => $request->name,
-            'created_by_id' => auth()->id(),
-        ]);
+        try {
+            // Attempt to create the income category
+            $incomeCategory = IncomeCategory::create([
+                'name' => $validated['name'],
+                'created_by_id' => auth()->id(),
+            ]);
 
-        return redirect()->route('admin.income_categories')->with('success', 'Income Category created successfully.');
+            // Log successful creation
+            $this->logService->logSuccess('Income Category created successfully: ' . $incomeCategory->name);
+
+            return redirect()->route('admin.income_categories')->with('success', 'Income Category created successfully.');
+        } catch (\Exception $e) {
+            // Log error if creation fails
+            $this->logService->logError('Failed to create Income Category: ' . $e->getMessage());
+
+            return back()->withErrors(['error' => 'Failed to create Income Category: ' . $e->getMessage()]);
+        }
     }
 
      // Show incomes under a specific category
@@ -39,15 +59,29 @@ class IncomeCategoryController extends Controller
 
      public function destroy($id)
     {
-        $category = IncomeCategory::findOrFail($id);
-        
-        // Delete associated income
-        $category->incomes()->delete(); // Assuming there's a relation defined in the incomeCategory model
+        try {
+            // Find the income category
+            $category = IncomeCategory::findOrFail($id);
+            
+            // Delete associated income records
+            $category->incomes()->delete(); // Assuming there's a relation defined in the IncomeCategory model
 
-        // Delete the category
-        $category->delete();
+            // Log the deletion of associated incomes
+            $this->logService->logSuccess('Deleted associated incomes for category: ' . $category->name);
 
-        return redirect()->route('admin.income_categories')->with('success', 'income Category deleted successfully.');
+            // Delete the category
+            $category->delete();
+
+            // Log the successful deletion of the category
+            $this->logService->logSuccess('Income Category deleted successfully: ' . $category->name);
+
+            return redirect()->route('admin.income_categories')->with('success', 'Income Category deleted successfully.');
+        } catch (\Exception $e) {
+            // Log the error if deletion fails
+            $this->logService->logError('Failed to delete Income Category: ' . $e->getMessage());
+
+            return back()->withErrors(['error' => 'Failed to delete Income Category: ' . $e->getMessage()]);
+        }
     }
 
     public function update(Request $request, $id)
@@ -56,11 +90,22 @@ class IncomeCategoryController extends Controller
             'name' => 'required|string|max:255',
         ]);
 
-        $category = IncomeCategory::findOrFail($id);
-        $category->name = $request->name;
-        $category->save();
+        try {
+            $category = IncomeCategory::findOrFail($id);
+            $category->name = $request->name;
+            $category->save();
 
-        // Return a JSON response instead of a redirect
-        return redirect()->route('admin.income_categories')->with('success', 'income Category updated successfully.');
+            // Log the successful update of the category
+            $this->logService->logSuccess('Income Category updated successfully: ' . $category->name);
+
+            // Return a JSON response instead of a redirect
+            return redirect()->route('admin.income_categories')->with('success', 'Income Category updated successfully.');
+        } catch (\Exception $e) {
+            // Log the error if the update fails
+            $this->logService->logError('Failed to update Income Category: ' . $e->getMessage());
+
+            return back()->withErrors(['error' => 'Failed to update Income Category: ' . $e->getMessage()]);
+        }
     }
+    
 }

@@ -204,11 +204,17 @@
                         </thead>
                         <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
                             @foreach($users as $user)
-                            <tr class="hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors duration-200">
+                            <tr class="hover:bg-gray-100 text-center dark:hover:bg-gray-600 transition-colors duration-200">
                                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-gray-300">{{ $user->name }}</td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">{{ $user->email }}</td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">{{ $user->phone }}</td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">{{ $user->address }}</td>
+                                {{-- <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">{{ $user->address }}</td> --}}
+                                <td class="px-6 py-4 text-sm text-gray-500 dark:text-gray-400" x-data="{ open: false }">
+                                    <div @click="open = !open" class="flex flex-col">
+                                        <span x-show="!open" class="description-minimal">{{ Str::limit($user->address, 9) }}...</span>
+                                        <span x-show="open" class="description-full">{{ $user->address }}</span>
+                                    </div>
+                                </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
                                     <div class="flex items-center space-x-2">
                                         <form action="{{ route('admin.users.edit', $user) }}" method="GET" class="inline">
