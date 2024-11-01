@@ -191,7 +191,7 @@
                         
                     <div class="lg:mt-4">
 
-                        <a href="/public/Trust-book.pdf" class="bg-orange-400 px-5 lg:text-xl py-3 text-white">Know More</a>
+                        <a href="https://drive.google.com/file/d/1RpPdPzYP_SzVKkEkngebLJr7K1K1sElk/view?usp=drive_link" class="bg-orange-400 px-5 lg:text-xl py-3 text-white">Know More</a>
                     </div>
                 </div>
 
