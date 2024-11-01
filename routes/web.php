@@ -21,6 +21,7 @@ use App\Http\Controllers\AnnouncementController;
 
 Route::get('/', [PageController::class, 'index'])->name('landing');
 Route::post('/contact', [ContactController::class, 'store'])->name('contact');
+Route::get('/home', [PageController::class, 'index'])->name('landing');
 
 
 // Other landing pages

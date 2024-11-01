@@ -2,7 +2,7 @@
     @foreach ($events as $event)
         <!-- Event Card -->
         <div class="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 p-4">
-            <div class="h-full p-4 bg-orange-50 rounded-lg border border-orange-600 shadow-md shadow-orange-400 dark:bg-gray-800 dark:bg-opacity-40 dark:shadow-purple-700 flex flex-col">
+            <div class="h-full p-4 bg--50 rounded-lg border border-orange-600 shadow-md shadow-orange-400 dark:bg-gray-800 dark:bg-opacity-40 dark:shadow-purple-700 flex flex-col">
                 <div class="flex-grow mb-4">
                     <div class="text-center m-2">
                         <p class="text-lg  py-3 font-medium text-gray-800 dark:text-gray-400">{{ $event->title }}</p>
@@ -51,10 +51,15 @@
                                 </tbody>
                             </table>
                         </div>
+                        <div class="w-full flex items-center justify-center my-5">
+
+                            <a href="/donations" class="text-center border-2 border-orange-500 rounded-full text-orange-500 hover:bg-orange-500 hover:text-white w-full py-3">Donate</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        
     @endforeach
 </div>
 

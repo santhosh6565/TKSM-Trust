@@ -28,36 +28,42 @@
     </style>
 </head>
 <body>
-    <div class="navbar ">
-        <nav class="bg-white fixed w-full top-0 shadow-md z-50 p-3 lg:px-[120px]">
-            <div class="container mx-auto px-4 flex justify-between items-center">
-                <a href="/" class="text-xl font-semibold">
-                    <img src="https://raw.githubusercontent.com/santhosh6565/catering-service/main/uploads/logo.webp" class="w-[120px] lg:w-[160px]" alt="">
-                </a>
-                <button class="block lg:hidden text-gray-700 focus:outline-none" id="menu-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-                    </svg>
-                </button>
-                <div class="hidden lg:flex space-x-[70px]" id="menu">
-                    <a href="{{ route('landing') }}" class="block text-gray-700 py-2 border-b-[3px] border-transparent hover:border-orange-400 transition duration-300">Home</a>
-                    <a href="{{ route('landing') }}#about" class="block text-gray-700 py-2 border-b-[3px] border-transparent hover:border-orange-400 transition duration-300">About</a>
-                    <a href="{{ route('landing') }}#contributions" class="block text-gray-700 py-2 border-b-[3px] border-transparent hover:border-orange-400 transition duration-300">Contributions</a>
-                    <a href="{{ route('landing') }}#contact" class="block text-gray-700 py-2 border-b-[3px] border-transparent hover:border-orange-400 transition duration-300">Contact</a>
-                    <a href="{{ route('donations') }}" class="block text-white bg-orange-400 px-8 py-2 rounded-full transition duration-300 hover:bg-orange-500">Donate</a>
+<div class="navbar ">
+            <nav class="bg-white fixed w-full top-0 shadow-md z-50 p-3 lg:p-2 lg:px-[120px]">
+                <div class="container mx-auto px-4  flex justify-between items-center">
+                    <a href="/" class="text-xl  font-semibold">
+                        <img src="https://raw.githubusercontent.com/santhosh6565/catering-service/main/uploads/logo.webp" class="w-[120px] lg:w-[185px]" alt="">
+                    </a>
+                    <button class="block lg:hidden text-gray-700 focus:outline-none" id="menu-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                    </button>
+                    <div class="hidden lg:flex space-x-[70px]" id="menu">
+                        <a href="./#about" class="block text-gray-700 py-2 border-b-[3px] border-transparent hover:border-orange-400 transition duration-300">About</a>
+                        <a href="./#contributions" class="block text-gray-700 py-2  border-b-[3px] border-transparent hover:border-orange-400 transition duration-300">Contributions</a>
+                        <!-- <a href="index.html#members"
+                        class="bl.ock text-gray-700 py-2  border-b-[3px] border-transparent hover:border-orange-400 transition duration-300">Members</a> -->
+                        <a href="./#contact" class="block text-gray-700 py-2  border-b-[3px] border-transparent hover:border-orange-400 transition duration-300">Contact</a>
+                        <a href="{{ route('Gallery') }}" class="block text-gray-700 py-2  border-b-[3px] border-transparent hover:border-orange-400 transition duration-300">Gallery</a>
+                        <a href="{{ route('Event') }}" class="block text-white bg-orange-400 px-8 py-2 rounded-full transition duration-300  hover:bg-orange-500">Donate</a>
+                    </div>
                 </div>
-            </div>
-        </nav>
-    </div>
-    <!-- Mobile Menu -->
-    <div class="lg:hidden hidden fixed bg-white w-full pt-[90px] z-10" id="mobile-menu">
-        <div class="text-center">
-            <a href="{{ route('landing') }}" class="block text-gray-700 py-2 pl-4 hover:bg-gray-100">Home</a>
-            <a href="{{ route('landing') }}#about" class="block text-gray-700 py-2 pl-4 hover:bg-gray-100">About</a>
-            <a href="{{ route('landing') }}#contributions" class="block text-gray-700 py-2 pl-4 hover:bg-gray-100">Contributions</a>
-            <a href="{{ route('landing') }}#contact" class="block text-gray-700 py-2 pl-4 hover:bg-gray-100">Contact</a>
-            <a href="{{ route('donations') }}" class="block text-gray-700 py-2 pl-4 bg-orange-400 text-white py-3 hover:bg-orange-500">Donate</a>
+            </nav>
         </div>
+        <!-- Mobile Menu -->
+        <div class="lg:hidden hidden fixed bg-white w-full pt-[90px] z-10" id="mobile-menu">
+            <div class="text-center">
+                <a href="./#about" class="block text-gray-700 py-2 pl-4 hover:bg-gray-100">About</a>
+                <a href="./#contributions" class="block text-gray-700 py-2 pl-4 hover:bg-gray-100">Contributions</a>
+                <!-- <a href="index.html#members" class="block text-gray-700 py-2 pl-4 hover:bg-gray-100">Members</a> -->
+                <a href="./#contact" class="block text-gray-700 py-2 pl-4 hover:bg-gray-100">Contact</a>
+                <a href="{{ route('Gallery') }}" class="block text-gray-700 py-2 pl-4 hover:bg-gray-100">Gallery</a>
+
+                <a href="{{ route('Event') }}"  class="block text-gray-700 py-2 pl-4 bg-orange-400 text-white py-3 hover:bg-orange-500">Donate</a>
+            </div>
+        </div>
+        </nav>
     </div>
 
     <div class="lg:flex mt-[80px]">
@@ -121,26 +127,26 @@
     <footer class="w-full h-auto bg-[#272c49]">
             <div class="lg:flex lg:justify-between lg:items-start p-4">
                 <div class="lg:w-1/4 h-full flex justify-center items-center">
-                    <img src="./images/logo-w.webp" class="h-full mt-14" alt="">
+                    <img src="https://raw.githubusercontent.com/santhosh6565/catering-service/main/uploads/darklogo.webp" class="h-full mt-14" alt="">
                 </div>
                 <div class="lg:w-1/4 pl-0 lg:pl-20">
                     <div class="flex justify-start items-start">
                         <h2 class="text-2xl text-white pt-10 border-b-2 border-orange-400">Quick Links</h2>
                     </div>
                     <div class="flex justify-start items-center py-4">
-                        <ul class="text-white">
+                    <ul class="text-white">
                             <li class="pb-2 hover:text-orange-400 cursor-pointer">
-                                <a href="#about">> About</a>
+                                <a href="/#about">> About</a>
                             </li>
                             <li class="pb-2 hover:text-orange-400 cursor-pointer">
-                                <a href="#our-works">> Our Works</a>
+                                <a href="/#our-works">> Our Works</a>
                             </li>
                             <!-- <li class="pb-2 hover:text-orange-400 cursor-pointer"><a href="index.html#members">> Members</a></li> -->
                             <li class="pb-2 hover:text-orange-400 cursor-pointer">
-                                <a href="#contact">> Contact</a>
+                                <a href="/#contact">> Contact</a>
                             </li>
                             <li class="pb-2 hover:text-orange-400 cursor-pointer">
-                                <a href="#">> Donate</a>
+                                <a href="/Event">> Donate</a>
                             </li>
                         </ul>
                     </div>
@@ -150,10 +156,10 @@
                         <h2 class="text-2xl text-white pt-10 border-b-2 border-orange-400">Location</h2>
                     </div>
                     <div class="flex justify-start items-center py-4">
-                        <p class="text-white text-start">No.30, Ramakrishnapuram 3rd street, west mambalam, chennai - 600033.</p>
+                        <p class="text-white text-start">“Sri Mayan Kudil”, Sannadhi Street, Thirukulandhai Perungulam Srivaikundam, Thoothukudi District</p>
                     </div>
                     <div class="flex justify-start items-center">
-                        <a class="text-orange-400 cursor-pointer" href="https://www.google.com/maps/place/13%C2%B002'14.6%22N+80%C2%B013'19.1%22E/@13.0373879,80.2193925,17z/data=!3m1!4b1!4m4!3m3!8m2!3d13.0373879!4d80.2219674?entry=ttu&g_ep=EgoyMDI0MTAwNy4xIKXMDSoASAFQAw%3D%3D">View On Map</a>
+                        <a class="text-orange-400 cursor-pointer" href="https://www.google.com/maps/place/Divya+Desam-95,+Arulmigu+Sri+Mayakoothar+Temple+(nava+tirupathi+%23+6)/@8.6416709,77.9945988,18.78z/data=!4m6!3m5!1s0x3b038b35ca8d47e5:0xc006d1bcb5ee8b69!8m2!3d8.6417285!4d77.9946517!16s%2Fg%2F1tdd3pyc?entry=ttu&g_ep=EgoyMDI0MTAyOS4wIKXMDSoASAFQAw%3D%3D">View On Map</a>
                     </div>
                 </div>
                 <div class="lg:w-1/4 pl-0 lg:pl-20 mt-4 lg:mt-0">
