@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PageController; 
+use App\Http\Controllers\PageController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Middleware\CheckPermissions;
@@ -19,12 +20,14 @@ use App\Http\Controllers\AnnouncementController;
 
 
 Route::get('/', [PageController::class, 'index'])->name('landing');
+Route::post('/contact', [ContactController::class, 'store'])->name('contact');
 
 
 // Other landing pages
 Route::get('/donations', [PageController::class, 'donations'])->name('donations');
 Route::get('/Event', [PageController::class, 'event'])->name('Event');
 Route::get('/Gallery', [PageController::class, 'gallery'])->name('Gallery');
+
 
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
@@ -116,6 +119,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::middleware(CheckPermissions::class . ':developer_control')->group(function () {
         Route::get('/Developer-controll', [DeveloperController::class, 'index'])->name('admin.developercontrol');
+        Route::get('/admin/contacts', [ContactController::class, 'index'])->name('admin.contacts.index');
     });
 
 });
