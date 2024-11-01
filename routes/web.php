@@ -19,6 +19,7 @@ use App\Http\Controllers\AnnouncementController;
 
 
 Route::get('/', [PageController::class, 'index'])->name('landing');
+// Route::get('/home', [PageController::class, 'index'])->name('landing');
 
 
 // Other landing pages
