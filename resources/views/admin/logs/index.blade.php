@@ -5,7 +5,17 @@
     <div class="card bg-white dark:bg-gray-800 shadow-lg rounded-lg">
         <div class="p-4">
             <div class="container mx-auto p-6">
-                <h2 class="text-2xl font-bold dark:text-white text-left mb-8">Logs</h2>
+                <div class="pt-4 pb-4">
+                    <div class="flex items-center justify-between pt-4">
+                        <h2 class="text-2xl dark:text-white font-semibold mb-4">Logs</h2>
+                        <div>
+                            <a href="{{ route('dashboard') }}" class="inline-flex items-center bg-purple-600 text-white font-medium rounded-lg px-4 py-2 mb-6 transition duration-300 hover:bg-purple-700">
+                                <i class="fas fa-arrow-left mr-2"></i> Back
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                {{-- <h2 class="text-2xl font-bold dark:text-white text-left mb-8">Logs</h2> --}}
                 @if($logs->isEmpty())
                     <div class="py-4 text-center text-gray-500 dark:text-gray-400">
                         <p class="bg-blue-100 border-l-4 border-blue-700 rounded-md p-4 mb-4 text-sm text-gray-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
