@@ -262,18 +262,18 @@
                 <!-- Contact Form Div -->
                 <div class="w-full lg:w-3/5 h-auto bg-coverbg-center " style="background-image: url('https://raw.githubusercontent.com/santhosh6565/catering-service/main/uploads/contact-bg.webp');">
                     <div class="bg-orange-400/90 flex justify-center items-center p-8 pt-[50px] div1">
-                        <form action="#" class="w-full lg:px-10" data-aos="fade-up" data-aos-duration="2000">
+                        <form id="contactForm" class="w-full lg:px-10" data-aos="fade-up" data-aos-duration="2000">
                             <h1 class="text-6xl text-white font-bold  pb-2   w-fit">Let's Get In Touch !</h1>
                             <p class="text-white mb-10">Fill in the form to connect with us.</p>
-                            <input type="text" placeholder="Your Name" class="w-full h-[60px] mb-5 p-3 bg-transparent border-2 shadow-lg border-white text-white placeholder:text-white rounded-lg">
+                            <input type="text" id="name" placeholder="Your Name" class="w-full h-[60px] mb-5 p-3 bg-transparent border-2 shadow-lg border-white text-white placeholder:text-white rounded-lg">
                             <br>
-                            <input type="email" placeholder="Your Email" class="w-full h-[60px] mb-5 p-3 bg-transparent border-2 shadow-lg border-white text-white placeholder:text-white rounded-lg">
+                            <input type="email" id="email" placeholder="Your Email" class="w-full h-[60px] mb-5 p-3 bg-transparent border-2 shadow-lg border-white text-white placeholder:text-white rounded-lg">
                             <br>
-                            <textarea name="" id="" class="w-full h-[300px] bg-transparent border-2 shadow-lg border-white text-white placeholder:text-white rounded-lg"></textarea>
+                            <textarea name="message" id="message" class="w-full h-[300px] bg-transparent border-2 shadow-lg border-white text-white placeholder:text-white rounded-lg"></textarea>
                             <div class="flex justify-center items-center">
-                                <button class="bg-white w-full px-4 py-5 rounded-full my-5 text-black shadow-lg text-center hover:bg-black hover:text-white">SEND MESSAGE</button>
+                                <button type="submit" class="bg-white w-full px-4 py-5 rounded-full my-5 text-black shadow-lg text-center hover:bg-black hover:text-white">SEND MESSAGE</button>
                             </div>
-                        </form>
+                        </form>
                     </div>
                 </div>
                 <!-- Google Maps Div -->
@@ -356,6 +356,81 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
         <script>
             AOS.init();
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>        
+        <script>
+            document.getElementById('contactForm').onsubmit = async function (event) {
+            event.preventDefault();
+
+            // Get form data
+            const formData = {
+                name: document.querySelector('input[placeholder="Your Name"]').value,
+                email: document.querySelector('input[placeholder="Your Email"]').value,
+                message: document.querySelector('textarea').value,
+            };
+
+            try {
+                // Send POST request
+                const response = await fetch('{{ route('contact') }}', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                if (response.ok) {
+                    const result = await response.json();
+
+                    // Show SweetAlert2 success message
+                    Swal.fire({
+                    icon: 'success',
+                    title: 'Message Received!',
+                    text: 'Thank you for reaching out to our Trust. We appreciate your interest and will get back to you soon.',
+                    timer: 3000,
+                    showConfirmButton: false
+                });
+
+                    // Show full-screen confetti for 3 seconds
+                    const duration = 5000;  // 3 seconds
+                    const end = Date.now() + duration;
+
+                    const frame = () => {
+                        // Stops the confetti when the time is up
+                        if (Date.now() < end) {
+                            requestAnimationFrame(frame);
+                        }
+
+                        confetti({
+                            particleCount: 2,
+                            angle: 60,
+                            spread: 55,
+                            origin: { x: 0 }
+                        });
+                        confetti({
+                            particleCount: 2,
+                            angle: 120,
+                            spread: 55,
+                            origin: { x: 1 }
+                        });
+                    };
+
+                    frame();
+
+                    // Clear form fields after submission
+                    document.getElementById('contactForm').reset();
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'There was an error submitting the form.',
+                });
+            }
+        };
         </script>
         <script>
             const menuBtn = document.getElementById('menu-btn');
