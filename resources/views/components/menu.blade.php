@@ -120,6 +120,15 @@
                 </a>
             </li>
         </ul>
+        <ul>
+            <li class="relative px-6 py-3" @click="activeLink = 'contact_form'">
+                <span x-show="activeLink === 'contact_form' || '{{ request()->routeIs('admin.contacts.index') }}'" class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg" aria-hidden="true"></span>
+                <a :class="{'text-gray-800 dark:text-white': activeLink === 'contact_form' || '{{ request()->routeIs('admin.contacts.index') }}'}" class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-white" href="{{ route('admin.contacts.index') }}">
+                    <i class="fas fa-code w-5 h-5" aria-hidden="true"></i>
+                    <span class="ml-4">Contact Form</span>
+                </a>
+            </li>
+        </ul>
     @endif
     
     @if (hasPermission('Anoucement'))
