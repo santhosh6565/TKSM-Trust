@@ -2,11 +2,11 @@
     @foreach ($events as $event)
         <!-- Event Card -->
         <div class="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 p-4">
-            <div class="h-full p-4 bg--50 rounded-lg border border-orange-600 shadow-md shadow-orange-400 dark:bg-gray-800 dark:bg-opacity-40 dark:shadow-purple-700 flex flex-col">
+            <div class="h-full p-4  rounded-lg border border-orange-600 shadow-md shadow-orange-400  flex flex-col">
                 <div class="flex-grow mb-4">
                     <div class="text-center m-2">
-                        <p class="text-lg  py-3 font-medium text-gray-800 dark:text-gray-400">{{ $event->title }}</p>
-                        <p class="text-sm font-medium text-gray-500 dark:text-gray-400">{{ $event->description }}</p>
+                        <p class="text-lg  py-3 font-medium text-gray-800 ">{{ $event->title }}</p>
+                        <p class="text-sm font-medium text-gray-500 ">{{ $event->description }}</p>
                     </div>
                 </div>
 
@@ -22,9 +22,9 @@
                         
                         <!-- Accordion Content -->
                         <div id="requirements-{{ $event->id }}" class="accordion-content overflow-hidden transition-all duration-300 ease-in-out max-h-0">
-                            <table class="min-w-full bg-white dark:text-white dark:bg-gray-700 rounded-lg shadow-md mt-4">
+                            <table class="min-w-full bg-white  rounded-lg shadow-md mt-4">
                                 <thead>
-                                    <tr class="bg-purple-200 dark:bg-purple-600">
+                                    <tr class="bg-purple-200 ">
                                         <th class="px-4 py-2 text-left">Requirement Name</th>
                                         <th class="px-4 py-2 text-left">Cost</th>
                                         <th class="px-4 py-2 text-left">Quantity</th>
