@@ -66,7 +66,7 @@
 @endsection
 
 @section('content')
-<div class="container mx-auto px-4 py-8">
+<div class="container mx-auto lg:px-4 py-8">
     <div class="bg-white dark:bg-gray-800 shadow-md rounded-lg p-6">
         <form id="imageForm" method="POST" action="{{ route('admin.images.store') }}" enctype="multipart/form-data">
             @csrf

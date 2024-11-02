@@ -70,7 +70,7 @@
 @endsection
 
 @section('content')
-<div class="container mx-auto px-4 py-8">
+<div class="container mx-auto lg:px-4 py-8">
     <div class="card p-4 bg-white dark:bg-gray-800 shadow-lg rounded-lg">
         <div class="p-4">
             <div class="container mx-auto p-6">

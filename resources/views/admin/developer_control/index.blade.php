@@ -51,7 +51,7 @@
 @endsection
 
 @section('content')
-<div class="container mx-auto px-4 py-4">
+<div class="container mx-auto lg:px-4 py-4">
     <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md pt-4 mb-6">
         <h2>Trashed Users</h2>
 

@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-<div class="container mx-auto px-4 py-8">
+<div class="container mx-auto lg:px-4 py-8">
     <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
         <div class="flex items-center justify-between mb-6">
             <h2 class="text-2xl dark:text-white font-semibold">Contact Messages</h2>

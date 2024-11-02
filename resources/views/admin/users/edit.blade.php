@@ -50,7 +50,7 @@
         </a>
     </div>
 </div>
-<div class="container mx-auto px-4 py-6">
+<div class="container mx-auto lg:px-4 py-6">
     <form id="userForm" action="{{ route('admin.users.update', $user) }}" method="POST">
         @csrf
         <div class="grid grid-cols-1 gap-4 md:grid-cols-2">

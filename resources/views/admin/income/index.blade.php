@@ -40,9 +40,9 @@
     <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md pt-4 mb-6">
         <div class="pt-4 pb-4">
             <div class="flex items-center justify-between pt-4">
-                <h2 class="text-2xl dark:text-white font-semibold mb-4">All Transactions Income</h2>
+                <h2 class="lg:text-2xl text-md dark:text-white font-semibold mb-4">All Transactions Income</h2>
                 <div>
-                    <a href="{{ route('admin.income.create') }}" class="inline-block bg-purple-600 text-white font-medium rounded-lg px-4 py-2 mb-6 transition duration-300 hover:bg-purple-700">
+                    <a href="{{ route('admin.income.create') }}" class="inline-block whitespace-nowrap bg-purple-600 text-white font-medium rounded-lg px-4 py-2 mb-6 transition duration-300 hover:bg-purple-700">
                         Add Income
                     </a>
                 </div>

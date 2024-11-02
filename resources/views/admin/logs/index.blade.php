@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container px-5 mx-auto m-5">
+<div class="container lg:px-5 mx-auto m-5">
     <div class="card bg-white dark:bg-gray-800 shadow-lg rounded-lg">
         <div class="p-4">
             <div class="container mx-auto p-6">

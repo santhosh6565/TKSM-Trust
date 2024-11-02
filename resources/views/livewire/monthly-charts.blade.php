@@ -1,4 +1,4 @@
-<div>
+<div class="lg:px-4">
     <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md mb-4">
         <h2 class="text-2xl font-bold text-center mb-5 text-gray-800 dark:text-gray-200">
              Monthly Report for {{ $year }}-{{ $month }}

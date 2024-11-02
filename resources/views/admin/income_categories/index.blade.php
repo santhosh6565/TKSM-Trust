@@ -30,13 +30,13 @@
 @endsection
 
 @section('content')
-<div class="container mx-auto px-4 py-8">
+<div class="container mx-auto lg:px-4 py-8">
     <div class="card bg-white p-4 bg-white dark:bg-gray-800 shadow-lg rounded-lg">
         <div class="p-4">
             <div class="flex items-center justify-between pt-4">
-                <h2 class="text-2xl dark:text-white font-semibold mb-4">Income Categories</h2>
+                <h2 class="lg:text-2xl text-md dark:text-white font-semibold mb-4">Income Categories</h2>
                 <div>
-                    <a href="#" class="inline-block bg-purple-600 text-white font-medium rounded-lg px-4 py-2 mb-6 transition duration-300 hover:bg-purple-700" id="openModal">
+                    <a href="#" class="inline-block whitespace-nowrap bg-purple-600 text-white font-medium rounded-lg px-4 py-2 mb-6 transition duration-300 hover:bg-purple-700" id="openModal">
                         Add Category
                     </a>
                 

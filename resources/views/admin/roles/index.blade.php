@@ -20,7 +20,7 @@
 @endsection
 
 @section('content')
-<div class="container mx-auto px-4 py-6">
+<div class="container mx-auto lg:px-4 py-6">
     <div class="card bg-white dark:bg-gray-800 shadow-lg rounded-lg">
         <div class="container mx-auto px-4 py-4">
             <h1 class="pb-4 pt-4 text-2xl dark:text-white font-semibold mb-4">Manage Roles</h1>

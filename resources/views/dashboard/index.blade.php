@@ -8,7 +8,7 @@
 
 @section('content')
   <div>
-    <div class="container px-4  mx-auto grid">
+    <div class="container lg:px-4 mx-auto grid">
         <h2 class="my-6 text-2xl sm:text-md font-semibold text-gray-700 dark:text-gray-200">
             👋 Hi, {{ Auth::user()->name }}! Welcome to the Dashboard
         </h2>
@@ -25,9 +25,9 @@
         @livewire('total-component')
         {{-- @livewire('upcoming-events') --}}
         @livewire('user-announcements')
-        @livewire('monthly-charts')
         {{-- @livewire('upcoming-eventsrequirements') --}}
     </div>
+    @livewire('monthly-charts')
   </div>
 
   {{-- <button id="confettiBtn">popup button</button> --}}

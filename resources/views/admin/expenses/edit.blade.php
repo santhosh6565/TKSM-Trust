@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container mx-auto px-4 py-8">
+<div class="container mx-auto lg:px-4 py-8">
     <div class="bg-white dark:bg-gray-800 shadow-md rounded-lg p-6">
         <h2 class="text-3xl font-bold text-center mb-8 text-gray-900 dark:text-gray-100">Add Expense</h2>
         <form action="{{ route('admin.expense.update', $expense->id) }}" method="POST">
