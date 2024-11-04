@@ -58,7 +58,7 @@
             <nav class="bg-white fixed w-full top-0 shadow-md z-50 p-3 lg:p-2 lg:px-[120px]">
                 <div class="container mx-auto px-4  flex justify-between items-center">
                     <a href="/" class="text-xl  font-semibold">
-                        <img src="https://raw.githubusercontent.com/santhosh6565/catering-service/main/uploads/logo.webp" class="w-[120px] lg:w-[185px]" alt="">
+                        <img src="https://raw.githubusercontent.com/santhosh6565/catering-service/main/uploads/logo.webp" class="w-[135px] lg:w-[185px]" alt="">
                     </a>
                     <button class="block lg:hidden text-gray-700 focus:outline-none" id="menu-btn">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -78,7 +78,7 @@
             </nav>
         </div>
         <!-- Mobile Menu -->
-        <div class="lg:hidden hidden fixed bg-white w-full pt-[90px] z-10" id="mobile-menu">
+        <div class="lg:hidden hidden fixed bg-white w-full pt-[60px] z-10" id="mobile-menu">
             <div class="text-center">
                 <a href="./#about" class="block text-gray-700 py-2 pl-4 hover:bg-gray-100">About</a>
                 <a href="./#contributions" class="block text-gray-700 py-2 pl-4 hover:bg-gray-100">Contributions</a>
@@ -309,7 +309,7 @@
         <footer class="w-full h-auto bg-[#272c49]">
             <div class="lg:flex lg:justify-between lg:items-start p-4">
                 <div class="lg:w-1/4 h-full flex justify-center items-center">
-                    <img src="https://raw.githubusercontent.com/santhosh6565/catering-service/main/uploads/darklogo.webp" class="h-full mt-14" alt="">
+                    <img src="https://raw.githubusercontent.com/santhosh6565/catering-service/main/uploads/logodark.webp" class="h-full mt-14" alt="">
                 </div>
                 <div class="lg:w-1/4 pl-0 lg:pl-20">
                     <div class="flex justify-start items-start">

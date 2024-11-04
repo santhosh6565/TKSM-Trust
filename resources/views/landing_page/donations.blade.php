@@ -40,11 +40,11 @@
                         </svg>
                     </button>
                     <div class="hidden lg:flex space-x-[70px]" id="menu">
-                        <a href="./#about" class="block text-gray-700 py-2 border-b-[3px] border-transparent hover:border-orange-400 transition duration-300">About</a>
-                        <a href="./#contributions" class="block text-gray-700 py-2  border-b-[3px] border-transparent hover:border-orange-400 transition duration-300">Contributions</a>
+                        <a href="/home#about" class="block text-gray-700 py-2 border-b-[3px] border-transparent hover:border-orange-400 transition duration-300">About</a>
+                        <a href="/home#contributions" class="block text-gray-700 py-2  border-b-[3px] border-transparent hover:border-orange-400 transition duration-300">Contributions</a>
                         <!-- <a href="index.html#members"
                         class="bl.ock text-gray-700 py-2  border-b-[3px] border-transparent hover:border-orange-400 transition duration-300">Members</a> -->
-                        <a href="./#contact" class="block text-gray-700 py-2  border-b-[3px] border-transparent hover:border-orange-400 transition duration-300">Contact</a>
+                        <a href="/#contact" class="block text-gray-700 py-2  border-b-[3px] border-transparent hover:border-orange-400 transition duration-300">Contact</a>
                         <a href="{{ route('Gallery') }}" class="block text-gray-700 py-2  border-b-[3px] border-transparent hover:border-orange-400 transition duration-300">Gallery</a>
                         <a href="{{ route('Event') }}" class="block text-white bg-orange-400 px-8 py-2 rounded-full transition duration-300  hover:bg-orange-500">Donate</a>
                     </div>
@@ -127,7 +127,7 @@
     <footer class="w-full h-auto bg-[#272c49]">
             <div class="lg:flex lg:justify-between lg:items-start p-4">
                 <div class="lg:w-1/4 h-full flex justify-center items-center">
-                    <img src="https://raw.githubusercontent.com/santhosh6565/catering-service/main/uploads/darklogo.webp" class="h-full mt-14" alt="">
+                    <img src="https://raw.githubusercontent.com/santhosh6565/catering-service/main/uploads/logodark.webp" class="h-full mt-14" alt="">
                 </div>
                 <div class="lg:w-1/4 pl-0 lg:pl-20">
                     <div class="flex justify-start items-start">
@@ -213,5 +213,97 @@
 }
 
     </script>
+     <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        // Function to update active link on scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            let current = "";
+            sections.forEach((section) => {
+            const sectionTop = section.offsetTop - 70; // Adjust for navbar height
+            if (window.scrollY >= sectionTop) {
+                current = section.getAttribute('id');
+            }
+            });
+            navLinks.forEach((link) => {
+            link.classList.remove('active');
+            if (link.getAttribute('href').includes(current)) {
+                link.classList.add('active');
+            }
+            });
+        });
+        const slides = document.getElementById('carouselSlides');
+        const dots = document.querySelectorAll('[data-slide]');
+        let currentIndex = 0;
+        const updateCarousel = (index) => {
+            slides.style.transform = `translateX(-${index * 100}%)`;
+            dots.forEach(dot => dot.classList.remove('bg-orange-400'));
+            dots[index].classList.add('bg-orange-400');
+        };
+        document.getElementById('prevButton').addEventListener('click', () => {
+            currentIndex = (currentIndex === 0) ? dots.length - 1 : currentIndex - 1;
+            updateCarousel(currentIndex);
+        });
+        document.getElementById('nextButton').addEventListener('click', () => {
+            currentIndex = (currentIndex === dots.length - 1) ? 0 : currentIndex + 1;
+            updateCarousel(currentIndex);
+        });
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+            currentIndex = index;
+            updateCarousel(index);
+            });
+        });
+        // Auto slide functionality (Optional)
+        setInterval(() => {
+            currentIndex = (currentIndex === dots.length - 1) ? 0 : currentIndex + 1;
+            updateCarousel(currentIndex);
+        }, 5000); // Slide every 5 seconds
+        function animateCounter(id, start, end, duration, stepSize = 1) {
+            let obj = document.getElementById(id),
+            current = start,
+            increment = stepSize,
+            range = end - start,
+            step = Math.abs(Math.floor(duration / (range / increment)));
+            let timer = setInterval(() => {
+            current += increment;
+            if (current >= end) {
+                current = end;
+                clearInterval(timer);
+            }
+            obj.textContent = current.toLocaleString() + "+"; // Add commas to large numbers and append "+"
+            }, step);
+        }
+        // Intersection Observer to trigger counters when the section is in view
+        document.addEventListener("DOMContentLoaded", function() {
+            const counterSection = document.getElementById('counter-section');
+            let hasCounted = false; // Ensure counters run only once
+            // Intersection observer options
+            const observerOptions = {
+            root: null, // viewport
+            threshold: 0.3 // Trigger when 30% of the section is visible
+            };
+            const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !hasCounted) {
+                hasCounted = true;
+                // Start counters when the section becomes visible
+                const totalDuration = 2500; // Total duration for all counters (in milliseconds)
+                animateCounter('total-events', 0, 10, totalDuration); // Small numbers count one by one
+                animateCounter('total-money', 0, 500000, totalDuration, 10000); // Count in 10,000s
+                animateCounter('people-helped', 0, 1000, totalDuration, 1000); // Count in 1,000s
+                animateCounter('years-service', 0, 10, totalDuration); // Small numbers count one by one
+                observer.unobserve(counterSection); // Stop observing once triggered
+                }
+            });
+            }, observerOptions);
+            observer.observe(counterSection); // Start observing the counter section
+        });
+        </script>
 </body>
 </html>

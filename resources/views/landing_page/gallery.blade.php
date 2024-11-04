@@ -79,7 +79,7 @@
             <nav class="bg-white fixed w-full top-0 shadow-md z-50 p-3 lg:p-2 lg:px-[120px]">
                 <div class="container mx-auto px-4  flex justify-between items-center">
                     <a href="/" class="text-xl  font-semibold">
-                        <img src="https://raw.githubusercontent.com/santhosh6565/catering-service/main/uploads/logo.webp" class="w-[120px] lg:w-[185px]" alt="">
+                        <img src="https://raw.githubusercontent.com/santhosh6565/catering-service/main/uploads/logo.webp" class="w-[135px] lg:w-[185px]" alt="">
                     </a>
                     <button class="block lg:hidden text-gray-700 focus:outline-none" id="menu-btn">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -87,11 +87,11 @@
                         </svg>
                     </button>
                     <div class="hidden lg:flex space-x-[70px]" id="menu">
-                        <a href="./#about" class="block text-gray-700 py-2 border-b-[3px] border-transparent hover:border-orange-400 transition duration-300">About</a>
-                        <a href="./#contributions" class="block text-gray-700 py-2  border-b-[3px] border-transparent hover:border-orange-400 transition duration-300">Contributions</a>
+                        <a href="#about" class="block text-gray-700 py-2 border-b-[3px] border-transparent hover:border-orange-400 transition duration-300">About</a>
+                        <a href="#contributions" class="block text-gray-700 py-2  border-b-[3px] border-transparent hover:border-orange-400 transition duration-300">Contributions</a>
                         <!-- <a href="index.html#members"
-                        class="bl.ock text-gray-700 py-2  border-b-[3px] border-transparent hover:border-orange-400 transition duration-300">Members</a> -->
-                        <a href="./#contact" class="block text-gray-700 py-2  border-b-[3px] border-transparent hover:border-orange-400 transition duration-300">Contact</a>
+                                class="block text-gray-700 py-2  border-b-[3px] border-transparent hover:border-orange-400 transition duration-300">Members</a> -->
+                        <a href="#contact" class="block text-gray-700 py-2  border-b-[3px] border-transparent hover:border-orange-400 transition duration-300">Contact</a>
                         <a href="{{ route('Gallery') }}" class="block text-gray-700 py-2  border-b-[3px] border-transparent hover:border-orange-400 transition duration-300">Gallery</a>
                         <a href="{{ route('Event') }}" class="block text-white bg-orange-400 px-8 py-2 rounded-full transition duration-300  hover:bg-orange-500">Donate</a>
                     </div>
@@ -99,23 +99,27 @@
             </nav>
         </div>
         <!-- Mobile Menu -->
-        <div class="lg:hidden hidden fixed bg-white w-full pt-[90px] z-10" id="mobile-menu">
+        <div class="lg:hidden hidden fixed bg-white w-full pt-[60px] z-10" id="mobile-menu">
             <div class="text-center">
                 <a href="./#about" class="block text-gray-700 py-2 pl-4 hover:bg-gray-100">About</a>
                 <a href="./#contributions" class="block text-gray-700 py-2 pl-4 hover:bg-gray-100">Contributions</a>
                 <!-- <a href="index.html#members" class="block text-gray-700 py-2 pl-4 hover:bg-gray-100">Members</a> -->
                 <a href="./#contact" class="block text-gray-700 py-2 pl-4 hover:bg-gray-100">Contact</a>
                 <a href="{{ route('Gallery') }}" class="block text-gray-700 py-2 pl-4 hover:bg-gray-100">Gallery</a>
-
-                <a href="{{ route('Event') }}"  class="block text-gray-700 py-2 pl-4 bg-orange-400 text-white py-3 hover:bg-orange-500">Donate</a>
+                <a href="{{ route('Event') }}" class="block text-gray-700 py-2 pl-4 bg-orange-400 text-white py-3 hover:bg-orange-500">Donate</a>
             </div>
         </div>
-        </nav>
-    </div>
+        </nav>undefined</div>undefined
+        <!-- Sections for navigation -->undefined<div class="z-10 bottom-[40px] xl:bottom-[20px] left-[30px] fixed flex">
+            <a href="https://wa.me/919940700250" target="_blank">
+                <img src="https://raw.githubusercontent.com/santhosh6565/catering-service/main/uploads/wapp.png" class="w-[60px] lg:w-[80px] " alt="">
+            </a>
+            <h1 class="mt-2 bg-gray-100 h-fit px-4 py-2 rounded-full text-[9px] lg:text-[15px] shadow-lg">Chat with us on WhatsApp !</h1>
+        </div>
 
-    <section class="px-6 py-10 lg:px-20 mt-20">
+    <section class="px-6 py-10 lg:px-20 lg:mt-20">
         <div class="flex items-center justify-center">
-            <h2 class="text-6xl font-semibold text-center text-black w-fit border-b-[5px] border-orange-400 mb-8">Gallery</h2>
+            <h2 class="text-4xl lg:text-6xl font-semibold text-center text-black w-fit border-b-[5px] border-orange-400 mb-8">Gallery</h2>
         </div>
         
         @if($events->isNotEmpty())
@@ -187,7 +191,7 @@
 <footer class="w-full h-auto bg-[#272c49]">
             <div class="lg:flex lg:justify-between lg:items-start p-4">
                 <div class="lg:w-1/4 h-full flex justify-center items-center">
-                    <img src="https://raw.githubusercontent.com/santhosh6565/catering-service/main/uploads/darklogo.webp" class="h-full mt-14" alt="">
+                    <img src="https://raw.githubusercontent.com/santhosh6565/catering-service/main/uploads/logodark.webp" class="h-full mt-14" alt="">
                 </div>
                 <div class="lg:w-1/4 pl-0 lg:pl-20">
                     <div class="flex justify-start items-start">
@@ -247,5 +251,30 @@
                 </h1>
             </div>
         </footer>
+        <script>
+             const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        // Function to update active link on scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            let current = "";
+            sections.forEach((section) => {
+            const sectionTop = section.offsetTop - 70; // Adjust for navbar height
+            if (window.scrollY >= sectionTop) {
+                current = section.getAttribute('id');
+            }
+            });
+            navLinks.forEach((link) => {
+            link.classList.remove('active');
+            if (link.getAttribute('href').includes(current)) {
+                link.classList.add('active');
+            }
+            });
+        });
+        </script>
 </body>
 </html>
