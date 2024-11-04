@@ -34,12 +34,11 @@ class RoleSeeder extends Seeder
         // Manager role with permissions for managing enrollments and reports
         Role::create([
             'permission_array' => json_encode([
-                'view_dashboard',
-                'CRUD',
-                'Enroll_Amount',
-                'Enroll_Amount_CRUD',
-                'Monthly_Report',
-                'Gallery_view'
+                "manage_roles",
+                "manage_user",
+                "events",
+                "events_crud",
+                "Anoucement"
             ]),
         ]);
 

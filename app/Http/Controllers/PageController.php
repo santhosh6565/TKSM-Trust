@@ -13,24 +13,18 @@ class PageController extends Controller
 
         // Fetch upcoming events that start after now and within the next 10 days
         $upcomingEvents = Event::where('event_status', 'upcoming')
-            ->where('start_date', '>=', now()) // Start date is now or later
-            ->where('start_date', '<=', now()->addDays(10)) // Start date is within the next 10 days
-            ->orderBy('start_date', 'asc')
-            ->get();
+        // ->whereBetween('start_date', [now()->subMonths(3), now()]) // Limit to last three months
+        ->orderBy('start_date', 'asc')
+        ->take(3) // Limit to three events
+        ->get();
 
-        // If no upcoming events found, show at least one event from all events
-        if ($upcomingEvents->isEmpty() && $events->isNotEmpty()) {
-            $upcomingEvents = $events->take(1);
+        // If no upcoming events are found, skip the section
+        if ($upcomingEvents->isEmpty()) {
+            $upcomingEvents = null;
         }
 
-        // Count total events
-        $totalEventCount = $events->count();
-
-        // Count upcoming events
-        $upcomingEventCount = $upcomingEvents->count();
-
         // Pass the counts and events to the view
-        return view('landing_page.homepage', compact('events', 'upcomingEvents', 'totalEventCount', 'upcomingEventCount'));
+        return view('landing_page.homepage', compact('events', 'upcomingEvents'));
     }
 
     public function donations()
@@ -45,7 +39,7 @@ class PageController extends Controller
 
     public function gallery()
     {
-        $events = Event::whereIn('view', ['event_and_gallery'])->get();
+        $events = Event::whereIn('view', ['gallery', 'event_and_gallery'])->get();
         return view('landing_page.gallery', compact('events')); // This view should exist in resources/views
     }
 }

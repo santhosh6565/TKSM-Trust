@@ -49,23 +49,21 @@
         }
     }
 
-    document.getElementById('imageForm').addEventListener('submit', function(event) {
-        const imageInput = document.getElementById('image');
-        const file = imageInput.files[0];
-
-        if (file && file.type !== 'image/avif') {
-            alert('Only AVIF images are allowed.');
-            imageInput.value = '';
-            event.preventDefault();
-        }
-    });
+</script>
+<script>
+    function disableButton() {
+        const submitButton = document.getElementById('submitButton');
+        submitButton.disabled = true; // Disable the button
+        submitButton.innerText = 'Updating...'; // Change the button text
+        submitButton.classList.add('bg-gray-500'); // Optional: Change the button color
+    }
 </script>
 @endsection
 
 @section('content')
 <div class="container mx-auto lg:px-4 py-8">
     <div class="bg-white dark:bg-gray-800 shadow-md rounded-lg p-6">
-        <form id="imageForm" method="POST" action="{{ route('admin.images.update', $image->id) }}" enctype="multipart/form-data">
+        <form id="imageForm" method="POST" action="{{ route('admin.images.update', $image->id) }}" enctype="multipart/form-data" onsubmit="disableButton()">
             @csrf
             @method('PUT')
             
@@ -92,7 +90,7 @@
             </div>
 
             <div class="mb-4">
-                <label for="image" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Upload Image (AVIF only)</label>
+                <label for="image" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Only upload the image you want edited (the image size should not exceed 2 MB.)</label>
                 <input type="file" name="image" id="image" class="mt-1 block w-full p-2 border rounded-lg dark:bg-gray-700 dark:text-white">
             </div>
 
@@ -100,6 +98,7 @@
                 <label for="status" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Status</label>
                 <select name="view" id="view" class="mt-1 block w-full p-2 border rounded-lg dark:bg-gray-700 dark:text-white">
                     <option value="gallery" {{ $image->status == 'gallery' ? 'selected' : '' }}>Gallery</option>
+                    <option value="event" {{ $image->status == 'event' ? 'selected' : '' }}>Event</option>
                     <option value="event_and_gallery" {{ $image->status == 'event_and_gallery' ? 'selected' : '' }}>Event & Gallery</option>
                 </select>
             </div>
@@ -113,6 +112,7 @@
             <select name="event_status" class="mt-1 block w-full border-gray-300 dark:bg-gray-700 dark:text-gray-200 rounded-md shadow-sm">
                 <option value="upcoming" {{ $image->event_status == 'upcoming' ? 'selected' : '' }}>Upcoming</option>
                 <option value="finished" {{ $image->event_status == 'finished' ? 'selected' : '' }}>Finished</option>
+                <option value="planning" {{ $image->event_status == 'planning' ? 'selected' : '' }}>Planning</option>
             </select>
 
             <div id="requirement-fields">
@@ -140,10 +140,10 @@
                 @endforeach
             </div>
 
-            <button type="button" id="add-more-requirements" class="bg-blue-500 text-white px-4 py-2 rounded-lg mt-2">Add More Requirements</button>
+            <button type="button" id="add-more-requirements" class="bg-purple-500 text-white px-4 py-2 rounded-lg mt-2">Add More Requirements</button>
 
             <div class="flex justify-end mt-4">
-                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg">Update</button>
+                <button id="submitButton" type="submit" class="bg-purple-500 text-white px-4 py-2 rounded-lg">Update</button>
             </div>
         </form>
     </div>

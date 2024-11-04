@@ -8,20 +8,21 @@ class Permission
     const ADMIN_PERMISSIONS = [
         'manage_roles',
         'manage_user',
-        'catergories',
-        'catergories_crud',
-        'enroll_amount',
-        'enroll_amount_crud',
-        'monthly_report',
+        // 'catergories',
+        // 'catergories_crud',
+        // 'enroll_amount',
+        // 'enroll_amount_crud',
+        // 'monthly_report',
         'events',
         'events_crud',
-        'developer_control',
+        // 'developer_control',
         'Anoucement'
     ];
 
     // User permissions
     const USER_PERMISSIONS = [
         'view_dashboard',
+        'events',
     ];
     
     // Method to get permissions based on role

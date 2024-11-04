@@ -1,4 +1,19 @@
 <div class="flex flex-wrap justify-center  space-y-4">
+    @if ($events->isEmpty())
+        <div class="p-8">
+            <div class="flex justify-center items-center w-full p-4">
+                <div class="rounded-lg border border-orange-600 shadow-md shadow-orange-400 p-6 text-center">
+                    <p class="text-lg font-medium text-gray-800">No Upcoming Events</p>
+                    <p class="text-sm font-medium text-gray-500">Stay tuned for future events! In the meantime, consider visiting our donations page.</p>
+                    <div class="mt-4">
+                        <a href="/donations" class="text-center border-2 border-orange-500 rounded-full text-orange-500 hover:bg-orange-500 hover:text-white py-2 px-4">
+                            Go to Donations
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endif
     @foreach ($events as $event)
         <!-- Event Card -->
         <div class="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 p-4">
@@ -59,7 +74,6 @@
                 </div>
             </div>
         </div>
-        
     @endforeach
 </div>
 

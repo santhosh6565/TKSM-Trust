@@ -23,10 +23,19 @@
           <li class="relative">
               <button type="button" class="flex text-sm bg-gray-800 rounded-full md:me-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
                   <span class="sr-only">Open user menu</span>
-                  <img class="w-8 h-8 rounded-full" src="" alt="user photo">
+                  @php
+                    // Get the authenticated user's name
+                    $userName = auth()->user()->name;
+
+                    // Extract the first and second letters
+                    $letters = strtoupper(substr($userName, 0, 2)); // Convert to uppercase
+                @endphp
+                  <div class="w-8 h-8 flex items-center justify-center bg-purple-500 text-white rounded-full">
+                        {{ $letters }}
+                  </div>
               </button>
               <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600" id="user-dropdown">
-                  <div class="px-4 py-3"> @auth <span class="block text-sm text-gray-900 dark:text-white">{{ auth()->user()->name }}</span>
+                  <div class="px-4 py-3"> @auth <span class="block text-sm text-gray-900 dark:text-white">{{ $userName }}</span>
                       <span class="block text-sm text-gray-500 truncate dark:text-gray-400">{{ auth()->user()->email }}</span> @else <span class="block text-sm text-gray-500 dark:text-gray-400">Guest</span> @endauth
                   </div>
                   <ul class="py-2" aria-labelledby="user-menu-button">

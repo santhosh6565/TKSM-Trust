@@ -9,6 +9,29 @@
             expanded: false,
         }));
     });
+    document.addEventListener('DOMContentLoaded', function () {
+        const deleteForms = document.querySelectorAll('.delete-form');
+        deleteForms.forEach(form => {
+            form.addEventListener('submit', function (event) {
+                event.preventDefault(); // Prevent the default form submission
+
+                // Show SweetAlert confirmation dialog
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: "This action cannot be undone!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        this.submit(); // Submit the form if confirmed
+                    }
+                });
+            });
+        });
+    });
 </script>
 @endsection
 
@@ -28,6 +51,12 @@
                 </div>
             </div>
         </div>
+        <div class="pt-4 pb-4 flex items-center">
+            <h3 class="mr-3 dark:text-white">View Counts:</h3>
+            <span class="bg-blue-500 text-white px-2 py-1 rounded-lg mr-2 dark:bg-blue-700">Event: {{ $imageCounts->get('Event')->count ?? 0 }}</span>
+            <span class="bg-gray-500 text-white px-2 py-1 rounded-lg mr-2 dark:bg-gray-700">Gallery: {{ $imageCounts->get('gallery')->count ?? 0 }}</span>
+            <span class="bg-green-500 text-white px-2 py-1 rounded-lg dark:bg-green-700">Event and Gallery: {{ $imageCounts->get('event_and_gallery')->count ?? 0 }}</span>
+        </div>              
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             @foreach($images as $image)
                 <!-- Wrap each card in its own Alpine.js component -->
@@ -48,7 +77,7 @@
 
                         <div class="flex items-center justify-between mt-4">
                             <a href="{{ route('admin.images.edit', $image->id) }}" class="text-blue-500 dark:text-blue-400 hover:underline">Edit</a>
-                            <form action="{{ route('admin.images.destroy', $image->id) }}" method="POST" onsubmit="return confirm('Are you sure?');">
+                            <form action="{{ route('admin.images.destroy', $image->id) }}" method="POST" class="delete-form">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="text-red-500 dark:text-red-400 hover:underline">Delete</button>

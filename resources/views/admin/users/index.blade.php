@@ -59,6 +59,14 @@
         });
     }
 </script>
+<script>
+    function disableButton() {
+        const submitButton = document.getElementById('submitButton');
+        submitButton.disabled = true; // Disable the button
+        submitButton.innerText = 'Adding...'; // Change the button text
+        submitButton.classList.add('bg-gray-500'); // Optional: Change the button color
+    }
+</script>
 @endsection
 
 @section('content')
@@ -71,7 +79,7 @@
                 <div class="alert alert-success mb-4">{{ session('success') }}</div>
             @endif
     
-            <form action="{{ route('admin.users.add') }}" method="POST" class="mb-6" id="userForm">
+            <form action="{{ route('admin.users.add') }}" method="POST" class="mb-6" id="userForm" onsubmit="disableButton()">
                 @csrf
                 <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
                     <!-- Name Field -->
@@ -164,7 +172,7 @@
                     </div>
                 </div>
             
-                <button type="submit" 
+                <button  id="submitButton" type="submit" 
                     class="text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800 mt-4">
                     Add User
                 </button>

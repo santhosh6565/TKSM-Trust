@@ -2,17 +2,17 @@
 
 namespace App\Livewire;
 
-use Livewire\Component;
-use App\Models\Event;
 use Carbon\Carbon;
+use App\Models\Event;
+use Livewire\Component;
 
 class UpcomingEvents extends Component
 {
     public function render()
     {
-        // Fetch upcoming events where `start_date` is in the future
-        $upcomingEvents = Event::where('start_date', '>=', now())
-            ->orderBy('start_date')
+        // Fetch upcoming events where `start_date` is in the future and status is 'planning'
+        $upcomingEvents = Event::where('event_status', 'planning')
+            ->where('event_status', 'planning') // Filter for events with status 'planning'
             ->get();
 
         return view('livewire.upcoming-events', [

@@ -131,7 +131,7 @@
                         <p class="text-white text-start">“Sri Mayan Kudil”, Sannadhi Street, Thirukulandhai Perungulam Srivaikundam, Thoothukudi District</p>
                     </div>
                     <div class="flex justify-start items-center">
-                        <a class="text-orange-400 cursor-pointer" href="https://www.google.com/maps/place/Divya+Desam-95,+Arulmigu+Sri+Mayakoothar+Temple+(nava+tirupathi+%23+6)/@8.6416709,77.9945988,18.78z/data=!4m6!3m5!1s0x3b038b35ca8d47e5:0xc006d1bcb5ee8b69!8m2!3d8.6417285!4d77.9946517!16s%2Fg%2F1tdd3pyc?entry=ttu&g_ep=EgoyMDI0MTAyOS4wIKXMDSoASAFQAw%3D%3D">View On Map</a>
+                        <a class="text-orange-400 cursor-pointer" href="https://maps.app.goo.gl/UguowUGwWcf2ynLe9">View On Map</a>
                     </div>
                 </div>
                 <div class="lg:w-1/4 pl-0 lg:pl-20 mt-4 lg:mt-0">

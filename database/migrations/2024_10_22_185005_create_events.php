@@ -18,10 +18,10 @@ return new class extends Migration
             $table->date('start_date')->nullable();
             $table->date('end_date')->nullable();
             $table->string('image_path'); // To store AVIF image paths
-            $table->enum('view', ['Event','gallery', 'event_and_gallery'])->default('gallery');
+            $table->enum('view', ['event','gallery', 'event_and_gallery'])->default('gallery');
             $table->string('location')->nullable(); // To store the location
             $table->json('requirements')->nullable(); // To store requirements as a JSON array
-            $table->enum('event_status', ['upcoming', 'finished'])->default('upcoming');
+            $table->enum('event_status', ['upcoming', 'planning', 'finished'])->default('upcoming');
             $table->timestamps();
         });        
     }

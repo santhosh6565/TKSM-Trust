@@ -47,17 +47,14 @@
             document.getElementById('start_date').value = '';
         }
     }
-
-    document.getElementById('imageForm').addEventListener('submit', function(event) {
-        const imageInput = document.getElementById('image');
-        const file = imageInput.files[0];
-
-        if (file && file.type !== 'image/avif') {
-            alert('Only AVIF images are allowed.');
-            imageInput.value = '';
-            event.preventDefault();
-        }
-    });
+</script>
+<script>
+    function disableButton() {
+        const submitButton = document.getElementById('submitButton');
+        submitButton.disabled = true; // Disable the button
+        submitButton.innerText = 'Creating...'; // Change the button text
+        submitButton.classList.add('bg-gray-500'); // Optional: Change the button color
+    }
 </script>
 @endsection
 
@@ -68,7 +65,7 @@
 @section('content')
 <div class="container mx-auto lg:px-4 py-8">
     <div class="bg-white dark:bg-gray-800 shadow-md rounded-lg p-6">
-        <form id="imageForm" method="POST" action="{{ route('admin.images.store') }}" enctype="multipart/form-data">
+        <form id="imageForm" method="POST" action="{{ route('admin.images.store') }}" enctype="multipart/form-data" onsubmit="disableButton()">
             @csrf
             <div class="mb-4">
                 <label for="title" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Title</label>
@@ -96,9 +93,10 @@
             </div>
 
             <div class="mb-4">
-                <label for="status" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Status</label>
-                <select name="status" id="status" class="mt-1 block w-full p-2 border rounded-lg dark:bg-gray-700 dark:text-white">
+                <label for="view" class="block text-sm font-medium text-gray-700 dark:text-gray-300">View</label>
+                <select name="view" id="view" class="mt-1 block w-full p-2 border rounded-lg dark:bg-gray-700 dark:text-white">
                     <option value="gallery">Gallery</option>
+                    <option value="event">Event</option>
                     <option value="event_and_gallery">Event & Gallery</option>
                 </select>
             </div>
@@ -134,7 +132,7 @@
             <button type="button" id="add-more-requirements" class="bg-blue-500 text-white px-4 py-2 rounded-lg mt-2">Add More Requirements</button>
 
             <div class="flex justify-end mt-4">
-                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg">Save</button>
+                <button id="submitButton" type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg">Creat</button>
             </div>
         </form>
     </div>

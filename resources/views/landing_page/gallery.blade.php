@@ -54,9 +54,27 @@
         .lightbox.active {
             display: flex;
         }
+        .custom-scrollbar::-webkit-scrollbar {
+              width: 8px; /* Vertical scrollbar width */
+              height: 8px; /* Horizontal scrollbar height */
+            }
+      
+            .custom-scrollbar::-webkit-scrollbar-track {
+              background: #f1f1f1; /* Light background color for the scrollbar track */
+            }
+      
+            .custom-scrollbar::-webkit-scrollbar-thumb {
+              background-color: #888; /* Scrollbar thumb color */
+              border-radius: 10px;
+              border: 2px solid transparent; /* Adds padding inside the thumb */
+            }
+      
+            .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+              background-color: #555; /* Darker color on hover */
+            }
     </style>
 </head>
-<body>
+<body class="custom-scrollbar">
 <div class="navbar ">
             <nav class="bg-white fixed w-full top-0 shadow-md z-50 p-3 lg:p-2 lg:px-[120px]">
                 <div class="container mx-auto px-4  flex justify-between items-center">
@@ -99,14 +117,31 @@
         <div class="flex items-center justify-center">
             <h2 class="text-6xl font-semibold text-center text-black w-fit border-b-[5px] border-orange-400 mb-8">Gallery</h2>
         </div>
-        <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
-            @foreach($events as $index => $event)
-                <div class="relative group overflow-hidden shadow-md">
-                    <img src="{{ asset('storage/' . $event->image_path) }}" alt="{{ $event->title }}" class="rounded-lg w-full h-full object-cover transition-transform duration-300 group-hover:scale-110 lightbox-trigger" data-index="{{ $index }}">
+        
+        @if($events->isNotEmpty())
+            <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
+                @foreach($events as $index => $event)
+                    <div class="relative group overflow-hidden shadow-md">
+                        <img src="{{ asset('storage/' . $event->image_path) }}" alt="{{ $event->title }}" class="rounded-lg w-full h-full object-cover transition-transform duration-300 group-hover:scale-110 lightbox-trigger" data-index="{{ $index }}">
+                    </div>
+                @endforeach
+            </div>
+        @else
+            <div class="p-8">
+                <div class="flex justify-center items-center w-full p-4">
+                    <div class="rounded-lg border border-orange-600 shadow-md shadow-orange-400 p-6 text-center">
+                        <p class="text-lg font-medium text-gray-800 pb-4">No Images in Gallery</p>
+                        <p class="text-sm font-medium text-gray-500 pb-2">Stay tuned for future events! In the meantime, consider visiting our donations page.</p>
+                        <div class="mt-4">
+                            <a href="/donations" class="text-center border-2 border-orange-500 rounded-full text-orange-500 hover:bg-orange-500 hover:text-white py-2 px-4">
+                                Go to Donations
+                            </a>
+                        </div>
+                    </div>
                 </div>
-            @endforeach
-        </div>
-    </section>
+            </div>
+        @endif
+    </section>    
 
     <div class="lightbox" id="lightbox">
         <div class="arrow left-arrow" onclick="changeImage(-1)">&#10094;</div>
@@ -184,7 +219,7 @@
                         <p class="text-white text-start">“Sri Mayan Kudil”, Sannadhi Street, Thirukulandhai Perungulam Srivaikundam, Thoothukudi District</p>
                     </div>
                     <div class="flex justify-start items-center">
-                        <a class="text-orange-400 cursor-pointer" href="https://www.google.com/maps/place/Divya+Desam-95,+Arulmigu+Sri+Mayakoothar+Temple+(nava+tirupathi+%23+6)/@8.6416709,77.9945988,18.78z/data=!4m6!3m5!1s0x3b038b35ca8d47e5:0xc006d1bcb5ee8b69!8m2!3d8.6417285!4d77.9946517!16s%2Fg%2F1tdd3pyc?entry=ttu&g_ep=EgoyMDI0MTAyOS4wIKXMDSoASAFQAw%3D%3D">View On Map</a>
+                        <a class="text-orange-400 cursor-pointer" href="https://maps.app.goo.gl/UguowUGwWcf2ynLe9">View On Map</a>
                     </div>
                 </div>
                 <div class="lg:w-1/4 pl-0 lg:pl-20 mt-4 lg:mt-0">

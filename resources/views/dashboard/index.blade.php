@@ -23,11 +23,13 @@
           <span> View Log &RightArrow;</span>
         </a>
         @livewire('total-component')
-        {{-- @livewire('upcoming-events') --}}
+        @livewire('upcoming-events')
         @livewire('user-announcements')
         {{-- @livewire('upcoming-eventsrequirements') --}}
     </div>
-    @livewire('monthly-charts')
+    @if (hasPermission('monthly_report'))
+      @livewire('monthly-charts')
+    @endif
   </div>
 
   {{-- <button id="confettiBtn">popup button</button> --}}
