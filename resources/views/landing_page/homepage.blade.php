@@ -244,34 +244,41 @@
                 </div>
             </section>
         @endif
-        <section class="founders my-10">
-            <div class="flex justify-center items-center" data-aos="fade-up" data-aos-duration="2000">
-                <h1 class="font-semibold border-b-[5px] border-orange-400 text-2xl w-fit mt-7 lg:mt-20 md:text-[50px]"> Meet the Founders </h1>
+        <!-- <section class="founders my-10">
+    <div class="flex justify-center items-center" data-aos="fade-up" data-aos-duration="2000">
+        <h1 class="font-semibold border-b-[5px] border-orange-400 text-2xl w-fit mt-7 lg:mt-20 md:text-[50px]"> Meet the Founders </h1>
+    </div>
+    <div class="grid gap-8 px-4 md:px-10 mt-12 md:grid-cols-2 lg:grid-cols-3">
+        <div class="text-center bg-white shadow-md rounded-lg overflow-hidden transition-transform transform hover:scale-105 p-10">
+            <div class="w-full h-60 lg:h-[380px] overflow-hidden">
+                <img src="https://raw.githubusercontent.com/santhosh6565/catering-service/main/uploads/ramanujam.avif" alt="Founder 1" class="w-full h-full object-cover object-center">
             </div>
-            <div class="grid gap-8 px-4 md:px-10 mt-12 md:grid-cols-2 lg:grid-cols-3">
-                <div class="text-center bg-white shadow-md rounded-lg overflow-hidden transition-transform transform hover:scale-105">
-                    <img src="./images/edu.webp" alt="Founder 1" class="w-full h-60 lg:h-[380px] object-cover">
-                    <div class="p-6">
-                        <h2 class="text-xl font-semibold mb-2">John Doe</h2>
-                        <p class="text-gray-600">John is the visionary leader with over 15 years of experience in the tech industry.</p>
-                    </div>
-                </div>
-                <div class="text-center bg-white shadow-md rounded-lg overflow-hidden transition-transform transform hover:scale-105">
-                    <img src="./images/edu.webp" alt="Founder 2" class="w-full h-60 lg:h-[380px]  object-cover">
-                    <div class="p-6">
-                        <h2 class="text-xl font-semibold mb-2">Jane Smith</h2>
-                        <p class="text-gray-600">Jane is the creative force behind our design and product strategies, making innovation a priority.</p>
-                    </div>
-                </div>
-                <div class="text-center bg-white shadow-md rounded-lg overflow-hidden transition-transform transform hover:scale-105">
-                    <img src="./images/edu.webp" alt="Founder 3" class="w-full h-60 lg:h-[380px]  object-cover">
-                    <div class="p-6">
-                        <h2 class="text-xl font-semibold mb-2">Mike Johnson</h2>
-                        <p class="text-gray-600">Mike brings unparalleled expertise in software development and leads our engineering team.</p>
-                    </div>
-                </div>
+            <div class="p-6">
+                <h2 class="text-xl font-semibold mb-2">Ramanujam</h2>
+                <p class="text-gray-600">Founder</p>
             </div>
-        </section>
+        </div>
+        <div class="text-center bg-white shadow-md rounded-lg overflow-hidden transition-transform transform hover:scale-105">
+            <div class="w-full h-60 lg:h-[380px] overflow-hidden">
+                <img src="./images/edu.webp" alt="Founder 2" class="w-full h-full object-cover object-center">
+            </div>
+            <div class="p-6">
+                <h2 class="text-xl font-semibold mb-2">Jane Smith</h2>
+                <p class="text-gray-600">Jane is the creative force behind our design and product strategies, making innovation a priority.</p>
+            </div>
+        </div>
+        <div class="text-center bg-white shadow-md rounded-lg overflow-hidden transition-transform transform hover:scale-105">
+            <div class="w-full h-60 lg:h-[380px] overflow-hidden">
+                <img src="./images/edu.webp" alt="Founder 3" class="w-full h-full object-cover object-center">
+            </div>
+            <div class="p-6">
+                <h2 class="text-xl font-semibold mb-2">Mike Johnson</h2>
+                <p class="text-gray-600">Mike brings unparalleled expertise in software development and leads our engineering team.</p>
+            </div>
+        </div>
+    </div>
+</section> -->
+
         <section id="contact" class="p-0">
             <!-- <h1 class="text-4xl">Contact Section</h1> -->
             <!-- <div class="flex items-center justify-center "><h1 class="text-white border-b-2 border-blue-900  w-fit">Contact Us</h1></div> -->
