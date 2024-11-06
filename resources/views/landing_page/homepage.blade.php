@@ -3,17 +3,58 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Trust</title>
+        <title>Thirukulandhai Sri Mayan Charitable Trust | Non-Profit | Support Underprivileged Communities</title>
+
+        <!-- Primary Meta Tags -->
+        <meta name="description" content="Thirukulandhai Sri Mayan Charitable Trust is dedicated to supporting underprivileged communities through healthcare, education, and disaster relief. Join us in creating sustainable change and empowering lives.">
+        <meta name="keywords" content="Thirukulandhai Sri Mayan Charitable Trust, non-profit, charitable organization, support underprivileged, community services, healthcare for the needy, educational support, disaster relief, empowering communities, volunteer opportunities, make a difference">
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        <!-- Google Fonts: Poppins -->
+
+        <!-- icon link -->
+        <link rel="icon" href="https://raw.githubusercontent.com/santhosh6565/catering-service/main/uploads/favicon.webp " type="image/x-icon">
+
+        <!-- Open Graph Meta Tags for Social Media -->
+        <meta property="og:title" content="Thirukulandhai Sri Mayan Charitable Trust | Uplifting Underprivileged Communities">
+        <meta property="og:description" content="Providing essential healthcare, education, and disaster relief to underprivileged communities. Join us to make a meaningful difference!">
+        <meta property="og:image" content="https://raw.githubusercontent.com/santhosh6565/catering-service/main/uploads/poster.webp"> <!-- Replace with the actual image URL if different -->
+        <meta property="og:url" content="https://thirukkulandhaisrimayan.com/"> <!-- Confirm the correct URL -->
+        <meta property="og:type" content="website">
+
+        <!-- Twitter Card Meta Tags -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Thirukulandhai Sri Mayan Charitable Trust | Supporting Underprivileged Communities">
+        <meta name="twitter:description" content="Empowering lives with healthcare, education, and disaster relief. Join our mission to create sustainable change.">
+        <meta name="twitter:image" content="https://raw.githubusercontent.com/santhosh6565/catering-service/main/uploads/poster.webp "> <!-- Ensure correct URL here too -->
+
+        <!-- Google Fonts: Poppins and Additional Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
-        {{-- <link rel="stylesheet" href="style.css"> --}}
+
+        <!-- Font Awesome and Tailwind CSS CDN -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMZozbQKozK4LFFd08ioytXt6K3fPGAZ+P7F4" crossorigin="anonymous">
-        <!-- Tailwind CDN -->
         <script src="https://cdn.tailwindcss.com"></script>
+
+        <!-- Schema Markup for Local Business or Organization -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "NGO",
+            "name": "Thirukulandhai Sri Mayan Charitable Trust",
+            "url": "https://thirukkulandhaisrimayan.com",
+            "description": "Thirukulandhai Sri Mayan Charitable Trust's gallery showcases impactful work in healthcare, education, and community support.",
+            "image": "https://raw.githubusercontent.com/santhosh6565/catering-service/main/uploads/logo.webp", <!-- Replace with actual image URL if needed -->
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Sri Mayan Kudil, Sannadhi Street, Thirukulandhai Perungulam",
+                "addressLocality": "Srivaikundam",
+                "addressRegion": "Thoothukudi District",
+                "postalCode": "628752", <!-- Add the actual postal code -->
+                "addressCountry": "IN"
+            }
+        }
+        </script>        
         <style>
             /* Apply Poppins font globally */
             body {
@@ -244,41 +285,40 @@
                 </div>
             </section>
         @endif
-        <!-- <section class="founders my-10">
-    <div class="flex justify-center items-center" data-aos="fade-up" data-aos-duration="2000">
-        <h1 class="font-semibold border-b-[5px] border-orange-400 text-2xl w-fit mt-7 lg:mt-20 md:text-[50px]"> Meet the Founders </h1>
-    </div>
-    <div class="grid gap-8 px-4 md:px-10 mt-12 md:grid-cols-2 lg:grid-cols-3">
-        <div class="text-center bg-white shadow-md rounded-lg overflow-hidden transition-transform transform hover:scale-105 p-10">
-            <div class="w-full h-60 lg:h-[380px] overflow-hidden">
-                <img src="https://raw.githubusercontent.com/santhosh6565/catering-service/main/uploads/ramanujam.avif" alt="Founder 1" class="w-full h-full object-cover object-center">
+        <section class="founders my-10">
+            <div class="flex justify-center items-center" data-aos="fade-up" data-aos-duration="2000">
+                <h1 class="font-semibold border-b-[5px] border-orange-400 text-2xl w-fit mt-7 lg:mt-20 md:text-[50px]">Meet the Founder & Hounarable Trustees</h1>
             </div>
-            <div class="p-6">
-                <h2 class="text-xl font-semibold mb-2">Ramanujam</h2>
-                <p class="text-gray-600">Founder</p>
+            <div class="grid gap-8 px-6 md:px-10 mt-12 sm:grid-cols-1 md:grid-cols-2  lg:grid-cols-3">
+                <div class="text-center bg-white shadow-md rounded-lg overflow-hidden transition-transform transform hover:scale-105 p-6 sm:p-4">
+                    <div class="w-full overflow-hidden" style="max-height: 400px; min-height: 400px;">
+                        <img src="https://raw.githubusercontent.com/santhosh6565/catering-service/main/uploads/ramanujam.avif" alt="Sri.Srirenga Ramanujan" class="w-full h-full rounded object-cover">
+                    </div>
+                    <div class="p-6 sm:p-4">
+                        <h2 class="text-xl sm:text-lg font-semibold mb-2">Sri.Srirenga Ramanujan</h2>
+                        <p class="text-gray-600">Trustee</p>
+                    </div>
+                </div>
+                <div class="text-center bg-white shadow-md rounded-lg overflow-hidden transition-transform transform hover:scale-105 p-6 sm:p-4">
+                    <div class="w-full overflow-hidden" style="max-height: 400px; min-height: 400px;">
+                        <img src="https://raw.githubusercontent.com/santhosh6565/catering-service/main/uploads/founder.avif" alt="Sri.Pkm.narasimhan" class="w-full h-full rounded object-cover">
+                    </div>
+                    <div class="p-6 sm:p-4">
+                        <h2 class="text-xl sm:text-lg font-semibold mb-2">Sri.Pkm.narasimhan</h2>
+                        <p class="text-gray-600">Founder</p>
+                    </div>
+                </div>
+                <div class="text-center bg-white shadow-md rounded-lg overflow-hidden transition-transform transform hover:scale-105 p-6 sm:p-4">
+                    <div class="w-full overflow-hidden" style="max-height: 400px; min-height: 400px;">
+                        <img src="https://raw.githubusercontent.com/santhosh6565/catering-service/main/uploads/trustee2.avif" alt="Sri.Aravindhavasan" class="w-full h-full rounded object-cover">
+                    </div>
+                    <div class="p-6 sm:p-4">
+                        <h2 class="text-xl sm:text-lg font-semibold mb-2">Sri.Aravindhavasan</h2>
+                        <p class="text-gray-600">Trustee</p>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="text-center bg-white shadow-md rounded-lg overflow-hidden transition-transform transform hover:scale-105">
-            <div class="w-full h-60 lg:h-[380px] overflow-hidden">
-                <img src="./images/edu.webp" alt="Founder 2" class="w-full h-full object-cover object-center">
-            </div>
-            <div class="p-6">
-                <h2 class="text-xl font-semibold mb-2">Jane Smith</h2>
-                <p class="text-gray-600">Jane is the creative force behind our design and product strategies, making innovation a priority.</p>
-            </div>
-        </div>
-        <div class="text-center bg-white shadow-md rounded-lg overflow-hidden transition-transform transform hover:scale-105">
-            <div class="w-full h-60 lg:h-[380px] overflow-hidden">
-                <img src="./images/edu.webp" alt="Founder 3" class="w-full h-full object-cover object-center">
-            </div>
-            <div class="p-6">
-                <h2 class="text-xl font-semibold mb-2">Mike Johnson</h2>
-                <p class="text-gray-600">Mike brings unparalleled expertise in software development and leads our engineering team.</p>
-            </div>
-        </div>
-    </div>
-</section> -->
-
+        </section>
         <section id="contact" class="p-0">
             <!-- <h1 class="text-4xl">Contact Section</h1> -->
             <!-- <div class="flex items-center justify-center "><h1 class="text-white border-b-2 border-blue-900  w-fit">Contact Us</h1></div> -->

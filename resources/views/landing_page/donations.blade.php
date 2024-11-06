@@ -3,17 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trust</title>
-    <!-- Google Fonts: Poppins -->
+    <title>Donate | Thirukulandhai Sri Mayan Charitable Trust</title>
+
+    <!-- Primary Meta Tags -->
+    <meta name="description" content="Support the initiatives of Thirukulandhai Sri Mayan Charitable Trust by making a donation. Help us provide healthcare, education, and disaster relief to underprivileged communities. Your donation makes a difference.">
+    <meta name="keywords" content="donate, charitable trust donations, healthcare donations, education donations, disaster relief donations, support underprivileged communities, Thirukulandhai Sri Mayan Trust donations, online donations">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <!-- Open Graph Meta Tags for Social Media -->
+    <meta property="og:title" content="Make a Donation | Thirukulandhai Sri Mayan Charitable Trust">
+    <meta property="og:description" content="Help us continue our work to provide healthcare, education, and disaster relief to communities in need. Your donation makes a meaningful impact.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/santhosh6565/catering-service/main/uploads/poster.webp "> <!-- Replace with a specific image URL for the donation page if available -->
+    <meta property="og:url" content="https://thirukkulandhaisrimayan.com/donations">
+    <meta property="og:type" content="website">
+
+    <!-- icon link -->
+    <link rel="icon" href="https://raw.githubusercontent.com/santhosh6565/catering-service/main/uploads/favicon.webp " type="image/x-icon">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Donate to Thirukulandhai Sri Mayan Charitable Trust">
+    <meta name="twitter:description" content="Contribute to causes like healthcare, education, and disaster relief. Your donation helps uplift underprivileged communities.">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/santhosh6565/catering-service/main/uploads/poster.webp ">
+
+    <!-- Google Fonts: Poppins and Additional Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
 
-
-    <!-- Tailwind CDN -->
+    <!-- Font Awesome and Tailwind CSS CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMZozbQKozK4LFFd08ioytXt6K3fPGAZ+P7F4" crossorigin="anonymous">
+    <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         /* Apply Poppins font globally */

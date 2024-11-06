@@ -3,15 +3,37 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Trust</title>
-        <!-- Google Fonts: Poppins -->
+        <title>Upcoming Events | Thirukulandhai Sri Mayan Charitable Trust</title>
+
+        <!-- Primary Meta Tags -->
+        <meta name="description" content="Stay updated with upcoming events organized by Thirukulandhai Sri Mayan Charitable Trust. Join us to support underprivileged communities through healthcare, education, and disaster relief initiatives.">
+        <meta name="keywords" content="Thirukulandhai Sri Mayan Charitable Trust events, community events, non-profit events, support underprivileged, healthcare events, educational events, disaster relief events, volunteer opportunities, charitable organization events">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+
+        <!-- icon link -->
+        <link rel="icon" href="https://raw.githubusercontent.com/santhosh6565/catering-service/main/uploads/favicon.webp " type="image/x-icon">
+
+        <!-- Open Graph Meta Tags for Social Media -->
+        <meta property="og:title" content="Join Upcoming Events | Thirukulandhai Sri Mayan Charitable Trust">
+        <meta property="og:description" content="Join our upcoming events to support and empower underprivileged communities through healthcare, education, and disaster relief efforts.">
+        <meta property="og:image" content="https://raw.githubusercontent.com/santhosh6565/catering-service/main/uploads/poster.webp"> <!-- Replace with a specific image URL for the event if available -->
+        <meta property="og:url" content="https://thirukkulandhaisrimayan.com/Event">
+        <meta property="og:type" content="website">
+
+        <!-- Twitter Card Meta Tags -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Upcoming Events | Thirukulandhai Sri Mayan Charitable Trust">
+        <meta name="twitter:description" content="Join us for our upcoming events to support healthcare, education, and disaster relief for underprivileged communities.">
+        <meta name="twitter:image" content="https://raw.githubusercontent.com/santhosh6565/catering-service/main/uploads/poster.webp ">
+
+        <!-- Google Fonts: Poppins and Additional Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
-        {{-- <link rel="stylesheet" href="style.css"> --}}
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+
+        <!-- Font Awesome and Tailwind CSS CDN -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMZozbQKozK4LFFd08ioytXt6K3fPGAZ+P7F4" crossorigin="anonymous">
-        <!-- Tailwind CDN -->
         <script src="https://cdn.tailwindcss.com"></script>
         <style>
             /* Apply Poppins font globally */

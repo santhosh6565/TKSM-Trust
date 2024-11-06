@@ -3,7 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Admin Login | Thirukulandhai Sri Mayan Charitable Trust</title>
+    
+    <!-- icon link -->
+    <link rel="icon" href="https://raw.githubusercontent.com/santhosh6565/catering-service/main/uploads/favicon.webp " type="image/x-icon">
+
+    <!-- Primary Meta Tags -->
+    <meta name="description" content="Admin login page for Thirukulandhai Sri Mayan Charitable Trust. Access the dashboard to manage events, donations, and other administrative tasks.">
+    <meta name="keywords" content="admin login, Thirukulandhai Sri Mayan Trust admin, manage events, manage donations, administrative login">
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">

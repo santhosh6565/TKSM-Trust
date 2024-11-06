@@ -1,15 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trust</title>
+    <title>Gallery | Thirukulandhai Sri Mayan Charitable Trust</title>
+    <meta name="description" content="Explore the Gallery of Thirukulandhai Sri Mayan Charitable Trust, showcasing our efforts in supporting communities through healthcare, education, and relief work.">
+    <meta name="keywords" content="Thirukulandhai Sri Mayan Charitable Trust gallery, community support images, charity work, healthcare initiatives, educational support, disaster relief photos">
+    
+    <!-- Canonical Tag -->
+    <link rel="canonical" href="https://thirukkulandhaisrimayan.com/gallery">
+
+    <!-- Robots Meta Tag -->
+    <meta name="robots" content="index, follow">
+
+    <!-- icon link -->
+    <link rel="icon" href="https://raw.githubusercontent.com/santhosh6565/catering-service/main/uploads/favicon.webp " type="image/x-icon">
+
+    <!-- icon link -->
+    <link rel="icon" href="https://raw.githubusercontent.com/santhosh6565/catering-service/main/uploads/favicon.webp " type="image/x-icon">
+
+    <!-- Language and Hreflang Tags -->
+    <meta http-equiv="content-language" content="en">
+    <link rel="alternate" hreflang="en" href="https://thirukkulandhaisrimayan.com/gallery">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Gallery | Thirukulandhai Sri Mayan Charitable Trust">
+    <meta property="og:description" content="Browse our gallery to see impactful work in healthcare, education, and disaster relief for underprivileged communities.">
+    <meta property="og:url" content="https://thirukkulandhaisrimayan.com/gallery">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://raw.githubusercontent.com/santhosh6565/catering-service/main/uploads/poster.webp"> <!-- Replace with actual image URL -->
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Gallery | Thirukulandhai Sri Mayan Charitable Trust">
+    <meta name="twitter:description" content="Browse our gallery to see impactful work in healthcare, education, and disaster relief for underprivileged communities.">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/santhosh6565/catering-service/main/uploads/poster.webp"> <!-- Replace with actual image URL -->
+    <meta name="twitter:url" content="https://thirukkulandhaisrimayan.com/gallery">    
+
+    <!-- Google Web Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMZozbQKozK4LFFd08ioytXt6K3fPGAZ+P7F4" crossorigin="anonymous">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMZozbQKozK4LFFd08ioytXt6K3fPGAZ+P7F4" crossorigin="anonymous" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
