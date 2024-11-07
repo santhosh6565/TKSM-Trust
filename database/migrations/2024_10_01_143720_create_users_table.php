@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration
             $table->string('password', 255);
             $table->string('popup_message')->nullable();
             $table->string('user_role')->nullable();
+            $table->rememberToken()->nullable();
             $table->timestamps();
             $table->softDeletes();
 
